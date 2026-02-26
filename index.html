@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Tatheer Hussain Mir — Researcher</title>
+<meta name="description" content="Academic portfolio of Tatheer Hussain Mir — Ph.D. Researcher at NKUST ISLab, Taiwan. NLP, Responsible AI, Health Data Privacy."/>
+<meta name="keywords" content="Tatheer Hussain Mir, NLP, Researcher, NKUST, ISLab, AI, Machine Learning"/>
+<meta property="og:title" content="Tatheer Hussain Mir — Researcher"/>
+<meta property="og:description" content="Ph.D. Researcher — NLP, Responsible AI, Health Data Privacy"/>
+<meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:#0a0a0f;color:#e2e8f0}
+a{color:#818cf8;text-decoration:none;transition:color .2s}a:hover{color:#a5b4fc}
+::selection{background:rgba(99,102,241,.3)}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0a0a0f}::-webkit-scrollbar-thumb{background:#2d2d44;border-radius:3px}
+input:focus,textarea:focus{border-color:rgba(99,102,241,.5)!important;outline:none}
+@keyframes float{0%,100%{transform:translateY(0);opacity:0}25%{opacity:1}50%{transform:translateY(-100vh);opacity:.5}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,.3)}50%{box-shadow:0 0 20px 10px rgba(99,102,241,.1)}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const {useState,useEffect,useRef} = React;
+
+const INIT = {
+  name:"Tatheer Hussain Mir", title:"Ph.D. Researcher",
+  affiliation:"Intelligent System Lab (ISLab), National Kaohsiung University of Science and Technology",
+  location:"Kaohsiung, Taiwan", email:"tatheer.mir@nkust.edu.tw",
+  orcid:"0009-0007-8409-8189", github:"TatheerHussain", medium:"tatheerhussainmir",
+  scholar:"", linkedin:"", twitter:"", profilePhoto:"",
+  bio:"I am a Ph.D. researcher at the Intelligent System Lab (ISLab), Department of Electrical Engineering, National Kaohsiung University of Science and Technology (NKUST), Taiwan. My research focuses on Natural Language Processing, Responsible AI, Health Data Privacy & De-identification, Human-Centered Computing, and Data-Driven AI systems. Previously, I was a researcher at Academia Sinica, National Central University (NCU), and National Chengchi University (NCCU), Taiwan.",
+  researchInterests:["Natural Language Processing","Responsible AI","Health Data De-identification","Human-Centered Computing","Large Language Models","Medical NLP","Computer Vision","Social Network Analysis"],
+  education:[
+    {degree:"Ph.D. in Electrical Engineering",school:"National Kaohsiung University of Science and Technology (NKUST)",year:"Present",details:"Intelligent System Lab (ISLab)"},
+    {degree:"M.Sc.",school:"National Central University (NCU), Taiwan",year:"",details:""}
+  ],
+  experience:[
+    {role:"Research Assistant",org:"National Institute of Cancer Research, NHRI",period:"",details:"Health data NLP research"},
+    {role:"Researcher",org:"Academia Sinica, Taiwan",period:"",details:"Social Networking & Human-Centered Computing"},
+    {role:"Researcher",org:"National Chengchi University (NCCU), Taiwan",period:"",details:""}
+  ],
+  publications:[
+    {title:"Leveraging large language models for the deidentification and temporal normalization of sensitive health information in electronic health records",authors:"Hong-Jie Dai, Tatheer Hussain Mir, Hao-Ping Yang & Zi-Rui Zhao",venue:"npj Digital Medicine",year:"2025",link:"https://www.nature.com/articles/s41746-025-01921-7",type:"journal"},
+    {title:"Multi-label advertising image classification using traditional deep neural networks and vision language models",authors:"Tatheer Hussain Mir, Jui-Cheng Wei, Mutiara Simanjuntak, You-Chen Zhang, Jia-Bin Chen & Hong-Jie Dai",venue:"Multimedia Tools and Applications (Springer)",year:"2025",link:"https://link.springer.com/article/10.1007/s11042-025-20940-w",type:"journal"},
+    {title:"Deidentification and Temporal Normalization of the Electronic Health Record Notes Using Large Language Models",authors:"Tatheer Hussain Mir et al.",venue:"CCIS vol 2148 (Springer)",year:"2025",link:"https://link.springer.com/chapter/10.1007/978-981-97-7966-6_1",type:"conference"},
+    {title:"Evaluating an NLP-Driven AI-Assisted ICD-10-CM Coding System for DRGs in a Real Hospital Environment",authors:"Hong-Jie Dai, ... Tatheer Hussain Mir, ... Vincent S Tseng",venue:"Journal of Medical Internet Research",year:"2024",link:"https://www.jmir.org/2024/1/e58278",type:"journal"}
+  ],
+  projects:[
+    {title:"Health Data De-identification with LLMs",status:"Active",desc:"Developing large language model-based pipelines for automatic de-identification of sensitive health information in electronic health records.",tech:["LLM","NLP","CRF","BERT"]},
+    {title:"AI-Assisted ICD-10 Medical Coding",status:"Active",desc:"Building NLP-driven systems for automatic ICD-10-CM code assignment in real hospital environments to improve diagnosis related group accuracy.",tech:["NLP","Deep Learning","Medical AI"]},
+    {title:"Multi-label Advertising Image Classification",status:"Completed",desc:"Classifying advertising images using CNN and Vision Transformer architectures with a novel inter-annotation agreement metric.",tech:["ViT","Swin","CNN","Computer Vision"]}
+  ],
+  blogs:[
+    {title:"When AI Knows Too Much: Safeguarding Sensitive Health Data",date:"Nov 29, 2025",summary:"Behind the Paper — npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",link:"https://communities.springernature.com/posts/when-ai-knows-too-much-safeguarding-sensitive-health-data-becomes-critical"},
+    {title:"NLP Lecture Series: From Basic to Advance Level",date:"Oct 7, 2020",summary:"A comprehensive introduction to NLP covering key concepts, tools, and applications.",link:"https://tatheerhussainmir.medium.com/nlp-lecture-series-from-basic-to-advance-level-part-1-fe1ee2b87dd4"},
+    {title:"Language Modelling",date:"2021",summary:"Exploring the fundamentals of language modelling and predicting words in NLP.",link:"https://tatheerhussainmir.medium.com/language-modelling-6349bbb3737a"},
+    {title:"Detailed Outline for a Comprehensive NLP Course",date:"Feb 9, 2023",summary:"Structured curriculum from NLP basics to advanced techniques including transformers.",link:"https://tatheerhussainmir.medium.com/detailed-outline-for-a-comprehensive-nlp-course-covering-topics-from-the-basics-to-advanced-f88c87788144"}
+  ],
+  news:[
+    {text:"New paper published in npj Digital Medicine on LLM-based health data de-identification",date:"Aug 2025"},
+    {text:"Paper on multi-label advertising image classification published in Multimedia Tools & Applications",date:"Jun 2025"},
+    {text:"Behind the Paper post published on Springer Nature Research Communities",date:"Nov 2025"}
+  ],
+  gallery:{
+    photos:[
+      {year:"2025",items:[{url:"https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400",caption:"Research Conference 2025"},{url:"https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400",caption:"Lab Meeting"}]},
+      {year:"2024",items:[{url:"https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400",caption:"AI CUP Competition"},{url:"https://images.unsplash.com/photo-1559223607-a43c990c692c?w=400",caption:"Campus Life"}]}
+    ],
+    videos:[{title:"Introduction to NLP Research",url:"https://www.youtube.com/watch?v=dQw4w9WgXcQ",desc:"Overview of our NLP research direction at ISLab"}]
+  },
+  reads:[
+    {title:"Attention Is All You Need",url:"https://arxiv.org/abs/1706.03762",desc:"The foundational transformer paper that revolutionized NLP."},
+    {title:"BERT: Pre-training of Deep Bidirectional Transformers",url:"https://arxiv.org/abs/1810.04805",desc:"Introduced bidirectional pre-training for language understanding."}
+  ]
+};
+
+const PASS="admin123";
+const getYTId=(url)=>{const m=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);return m?m[1]:null};
+
+const SocialBar=({d})=>{
+  const links=[
+    d.email&&{icon:"✉",href:`mailto:${d.email}`,label:"Email"},
+    d.github&&{icon:"⌂",href:`https://github.com/${d.github}`,label:"GitHub"},
+    d.medium&&{icon:"✎",href:`https://${d.medium}.medium.com`,label:"Medium"},
+    d.orcid&&{icon:"⊕",href:`https://orcid.org/${d.orcid}`,label:"ORCID"},
+    d.scholar&&{icon:"🎓",href:d.scholar,label:"Scholar"},
+    d.linkedin&&{icon:"in",href:d.linkedin,label:"LinkedIn"},
+    d.twitter&&{icon:"𝕏",href:d.twitter,label:"Twitter/X"},
+  ].filter(Boolean);
+  return <div style={{display:"flex",justifyContent:"center",gap:"12px",padding:"30px 0 10px",borderTop:"1px solid rgba(99,102,241,.08)",marginTop:"40px"}}>
+    {links.map((l,i)=><a key={i} href={l.href} target="_blank" rel="noopener noreferrer" title={l.label} style={{width:"40px",height:"40px",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(99,102,241,.08)",border:"1px solid rgba(99,102,241,.15)",color:"#a5b4fc",fontSize:"15px",fontWeight:700,textDecoration:"none",transition:"all .3s"}}>{l.icon}</a>)}
+  </div>;
+};
+
+function App(){
+  const[d,setD]=useState(INIT);
+  const[page,setPage]=useState("home");
+  const[pubTab,setPubTab]=useState("papers");
+  const[galTab,setGalTab]=useState("photos");
+  const[admin,setAdmin]=useState(false);
+  const[loginOpen,setLoginOpen]=useState(false);
+  const[pw,setPw]=useState("");
+  const[pwErr,setPwErr]=useState("");
+  const[editModal,setEditModal]=useState(null);
+  const[editForm,setEditForm]=useState({});
+  const[scrollY,setScrollY]=useState(0);
+  const[clicks,setClicks]=useState(0);
+  const ct=useRef(null);
+
+  useEffect(()=>{
+    const h=()=>setScrollY(window.scrollY);
+    window.addEventListener("scroll",h);
+    const k=(e)=>{if(e.ctrlKey&&e.shiftKey&&e.key==="A"){e.preventDefault();setLoginOpen(true)}};
+    window.addEventListener("keydown",k);
+    return()=>{window.removeEventListener("scroll",h);window.removeEventListener("keydown",k)};
+  },[]);
+
+  const logoClick=()=>{setPage("home");const n=clicks+1;setClicks(n);clearTimeout(ct.current);if(n>=5){setLoginOpen(true);setClicks(0)}else ct.current=setTimeout(()=>setClicks(0),2000)};
+  const login=()=>{if(pw===PASS){setAdmin(true);setLoginOpen(false);setPw("");setPwErr("")}else setPwErr("Invalid password")};
+  const openEdit=(cfg)=>{setEditModal(cfg);setEditForm(cfg.initial||{})};
+  const closeEdit=()=>{setEditModal(null);setEditForm({})};
+  const saveEdit=()=>{if(editModal?.onSave)editModal.onSave(editForm);closeEdit()};
+  const delItem=(key,idx)=>{const c={...d};c[key]=[...c[key]];c[key].splice(idx,1);setD(c)};
+  const up=(key,idx,form)=>{const c={...d};c[key]=[...c[key]];c[key][idx]=form;setD(c)};
+  const add=(key,form)=>{const c={...d};c[key]=[...c[key],form];setD(c)};
+
+  const Dot=({i})=><div style={{position:"absolute",bottom:"-10px",left:`${(i*17)%100}%`,width:"3px",height:"3px",borderRadius:"50%",background:"rgba(99,102,241,.3)",animation:`float ${8+i%5*2}s ease-in-out infinite`,animationDelay:`${i*.3}s`}}/>;
+  const Modal=({children,onClose})=><div onClick={onClose} style={{position:"fixed",inset:0,background:"rgba(0,0,0,.7)",backdropFilter:"blur(8px)",zIndex:1000,display:"flex",alignItems:"center",justifyContent:"center",padding:"20px"}}><div onClick={e=>e.stopPropagation()} style={{background:"linear-gradient(145deg,#13131f,#1a1a2e)",borderRadius:"16px",padding:"32px",maxWidth:"600px",width:"100%",border:"1px solid rgba(99,102,241,.2)",maxHeight:"85vh",overflow:"auto"}}>{children}</div></div>;
+  const Inp=({label,value,onChange,multi,type})=><div style={{marginBottom:"14px"}}><label style={{display:"block",fontSize:"11px",color:"#818cf8",marginBottom:"5px",textTransform:"uppercase",letterSpacing:"1px"}}>{label}</label>{multi?<textarea value={value||""} onChange={onChange} rows={3} style={{width:"100%",background:"#0d0d1a",border:"1px solid rgba(99,102,241,.2)",borderRadius:"8px",padding:"10px 14px",color:"#e2e8f0",fontSize:"14px",resize:"vertical",outline:"none"}}/>:<input type={type||"text"} value={value||""} onChange={onChange} style={{width:"100%",background:"#0d0d1a",border:"1px solid rgba(99,102,241,.2)",borderRadius:"8px",padding:"10px 14px",color:"#e2e8f0",fontSize:"14px",outline:"none"}}/>}</div>;
+  const Btn=({children,onClick,primary,small,danger})=><button onClick={onClick} style={{padding:small?"5px 12px":"10px 22px",borderRadius:"8px",border:danger?"1px solid #ef4444":primary?"none":"1px solid rgba(99,102,241,.3)",background:danger?"transparent":primary?"linear-gradient(135deg,#6366f1,#8b5cf6)":"transparent",color:danger?"#ef4444":primary?"#fff":"#818cf8",fontSize:small?"11px":"14px",fontWeight:600,cursor:"pointer",transition:"all .2s"}}>{children}</button>;
+  const Tag=({children})=><span style={{display:"inline-block",padding:"4px 12px",borderRadius:"20px",background:"rgba(99,102,241,.12)",color:"#a5b4fc",fontSize:"12px",fontWeight:500,border:"1px solid rgba(99,102,241,.15)"}}>{children}</span>;
+  const Card=({children,style})=><div style={{background:"linear-gradient(145deg,rgba(19,19,31,.8),rgba(26,26,46,.6))",borderRadius:"12px",padding:"24px",border:"1px solid rgba(99,102,241,.1)",backdropFilter:"blur(10px)",transition:"all .3s",...style}}>{children}</div>;
+  const Sec=({title,children})=><section style={{marginBottom:"50px",animation:"fadeUp .6s ease-out"}}><div style={{display:"flex",alignItems:"center",gap:"12px",marginBottom:"24px"}}><div style={{width:"4px",height:"28px",background:"linear-gradient(180deg,#6366f1,#8b5cf6)",borderRadius:"2px"}}/><h2 style={{fontSize:"22px",fontWeight:700,background:"linear-gradient(135deg,#e2e8f0,#818cf8)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>{title}</h2></div>{children}</section>;
+  const TabBtn=({active,onClick,children})=><button onClick={onClick} style={{padding:"8px 18px",borderRadius:"8px",border:"none",cursor:"pointer",background:active?"rgba(99,102,241,.15)":"transparent",color:active?"#a5b4fc":"#64748b",fontSize:"14px",fontWeight:500,transition:"all .2s"}}>{children}</button>;
+  const AdminBtns=({onEdit,onDel})=>admin?<div style={{marginTop:"10px",display:"flex",gap:"6px"}}>{onEdit&&<Btn small onClick={onEdit}>Edit</Btn>}{onDel&&<Btn small danger onClick={onDel}>×</Btn>}</div>:null;
+
+  const ProfileAvatar=()=>{
+    if(d.profilePhoto) return <img src={d.profilePhoto} alt={d.name} style={{width:"140px",height:"140px",borderRadius:"50%",objectFit:"cover",border:"3px solid rgba(99,102,241,.3)",flexShrink:0,animation:"pulse 3s infinite"}}/>;
+    return <div style={{width:"140px",height:"140px",borderRadius:"50%",background:"linear-gradient(135deg,#6366f1,#8b5cf6)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"48px",fontWeight:700,color:"#fff",flexShrink:0,animation:"pulse 3s infinite"}}>{d.name.split(" ").map(w=>w[0]).join("").slice(0,2)}</div>;
+  };
+
+  // ─── PAGES ───
+  const HomePage=()=><div>
+    <div style={{position:"relative",overflow:"hidden",borderRadius:"20px",background:"linear-gradient(135deg,#0f0f1a,#13132a 50%,#1a0f2e)",padding:"60px 40px",marginBottom:"50px",border:"1px solid rgba(99,102,241,.1)"}}>
+      <div style={{position:"absolute",inset:0,overflow:"hidden"}}>{[...Array(12)].map((_,i)=><Dot key={i} i={i}/>)}<div style={{position:"absolute",top:"-50%",right:"-20%",width:"500px",height:"500px",borderRadius:"50%",background:"radial-gradient(circle,rgba(99,102,241,.08),transparent 70%)"}}/></div>
+      <div style={{position:"relative",zIndex:1,display:"flex",gap:"40px",alignItems:"center",flexWrap:"wrap"}}>
+        <div style={{position:"relative"}}>
+          <ProfileAvatar/>
+          {admin&&<button onClick={()=>openEdit({title:"Profile Photo",fields:[{key:"profilePhoto",label:"Photo URL",type:"url"}],initial:{profilePhoto:d.profilePhoto},onSave:f=>setD({...d,profilePhoto:f.profilePhoto})})} style={{position:"absolute",bottom:"4px",right:"4px",width:"32px",height:"32px",borderRadius:"50%",background:"rgba(99,102,241,.8)",border:"none",color:"#fff",fontSize:"14px",cursor:"pointer"}}>📷</button>}
+        </div>
+        <div style={{flex:1,minWidth:"260px"}}>
+          <h1 style={{fontSize:"34px",fontWeight:800,marginBottom:"6px",background:"linear-gradient(135deg,#fff,#c7d2fe)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>{d.name}</h1>
+          <p style={{fontSize:"17px",color:"#818cf8",fontWeight:500,marginBottom:"4px"}}>{d.title}</p>
+          <p style={{fontSize:"14px",color:"#94a3b8",marginBottom:"12px"}}>{d.affiliation}</p>
+          <p style={{fontSize:"13px",color:"#64748b"}}>📍 {d.location}</p>
+          {admin&&<div style={{marginTop:"10px"}}><Btn small onClick={()=>openEdit({title:"Edit Profile",fields:[{key:"name",label:"Name"},{key:"title",label:"Title"},{key:"affiliation",label:"Affiliation"},{key:"location",label:"Location"},{key:"email",label:"Email"},{key:"orcid",label:"ORCID"},{key:"github",label:"GitHub"},{key:"medium",label:"Medium"},{key:"scholar",label:"Google Scholar URL"},{key:"linkedin",label:"LinkedIn URL"},{key:"twitter",label:"Twitter/X URL"}],initial:{name:d.name,title:d.title,affiliation:d.affiliation,location:d.location,email:d.email,orcid:d.orcid,github:d.github,medium:d.medium,scholar:d.scholar,linkedin:d.linkedin,twitter:d.twitter},onSave:f=>setD({...d,...f})})}>Edit Profile</Btn></div>}
+        </div>
+      </div>
+    </div>
+    <Sec title="About"><Card><p style={{lineHeight:1.8,color:"#cbd5e1",fontSize:"15px"}}>{d.bio}</p>{admin&&<div style={{marginTop:"10px"}}><Btn small onClick={()=>openEdit({title:"Edit Bio",fields:[{key:"bio",label:"Bio",multi:true}],initial:{bio:d.bio},onSave:f=>setD({...d,bio:f.bio})})}>Edit</Btn></div>}</Card></Sec>
+    <Sec title="Research Interests"><div style={{display:"flex",flexWrap:"wrap",gap:"10px"}}>{d.researchInterests.map((r,i)=><Tag key={i}>{r}</Tag>)}</div></Sec>
+    <Sec title="Latest News">
+      {d.news.map((n,i)=><Card key={i} style={{marginBottom:"10px",display:"flex",gap:"16px",alignItems:"flex-start",flexWrap:"wrap"}}><span style={{color:"#6366f1",fontSize:"13px",fontWeight:600,whiteSpace:"nowrap",minWidth:"80px"}}>{n.date}</span><span style={{color:"#cbd5e1",fontSize:"14px",flex:1}}>{n.text}</span><AdminBtns onEdit={()=>openEdit({title:"Edit News",fields:[{key:"date",label:"Date"},{key:"text",label:"Text"}],initial:n,onSave:f=>up("news",i,f)})} onDel={()=>delItem("news",i)}/></Card>)}
+      {admin&&<div style={{marginTop:"10px"}}><Btn small onClick={()=>openEdit({title:"Add News",fields:[{key:"date",label:"Date"},{key:"text",label:"Text"}],initial:{},onSave:f=>add("news",f)})}>+ Add News</Btn></div>}
+    </Sec>
+    <Sec title="Education">
+      {d.education.map((e,i)=><Card key={i} style={{marginBottom:"10px"}}><div style={{display:"flex",justifyContent:"space-between",flexWrap:"wrap"}}><div><h3 style={{fontSize:"15px",fontWeight:600,color:"#e2e8f0"}}>{e.degree}</h3><p style={{color:"#818cf8",fontSize:"14px"}}>{e.school}</p>{e.details&&<p style={{color:"#64748b",fontSize:"13px",marginTop:"4px"}}>{e.details}</p>}</div><span style={{color:"#6366f1",fontSize:"13px",fontWeight:600}}>{e.year}</span></div><AdminBtns onEdit={()=>openEdit({title:"Edit Education",fields:[{key:"degree",label:"Degree"},{key:"school",label:"School"},{key:"year",label:"Year"},{key:"details",label:"Details"}],initial:e,onSave:f=>up("education",i,f)})} onDel={()=>delItem("education",i)}/></Card>)}
+      {admin&&<Btn small onClick={()=>openEdit({title:"Add Education",fields:[{key:"degree",label:"Degree"},{key:"school",label:"School"},{key:"year",label:"Year"},{key:"details",label:"Details"}],initial:{},onSave:f=>add("education",f)})}>+ Add</Btn>}
+    </Sec>
+    <Sec title="Experience">
+      {d.experience.map((e,i)=><Card key={i} style={{marginBottom:"10px"}}><h3 style={{fontSize:"15px",fontWeight:600,color:"#e2e8f0"}}>{e.role}</h3><p style={{color:"#818cf8",fontSize:"14px"}}>{e.org}</p>{e.details&&<p style={{color:"#64748b",fontSize:"13px",marginTop:"4px"}}>{e.details}</p>}<AdminBtns onEdit={()=>openEdit({title:"Edit Experience",fields:[{key:"role",label:"Role"},{key:"org",label:"Organization"},{key:"period",label:"Period"},{key:"details",label:"Details"}],initial:e,onSave:f=>up("experience",i,f)})} onDel={()=>delItem("experience",i)}/></Card>)}
+      {admin&&<Btn small onClick={()=>openEdit({title:"Add Experience",fields:[{key:"role",label:"Role"},{key:"org",label:"Organization"},{key:"period",label:"Period"},{key:"details",label:"Details"}],initial:{},onSave:f=>add("experience",f)})}>+ Add</Btn>}
+    </Sec>
+    <Sec title="Important Reads">
+      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))",gap:"16px"}}>
+        {d.reads.map((r,i)=><a key={i} href={r.url} target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}><Card style={{height:"100%",cursor:"pointer"}}><div style={{width:"100%",height:"8px",borderRadius:"4px",background:"linear-gradient(90deg,#6366f1,#8b5cf6,#a78bfa)",marginBottom:"16px"}}/><h4 style={{fontSize:"15px",fontWeight:600,color:"#e2e8f0",marginBottom:"6px",lineHeight:1.4}}>{r.title}</h4><p style={{color:"#94a3b8",fontSize:"13px",lineHeight:1.6,marginBottom:"8px"}}>{r.desc}</p><span style={{color:"#6366f1",fontSize:"12px",wordBreak:"break-all"}}>{r.url}</span>{admin&&<div onClick={e=>e.preventDefault()}><AdminBtns onEdit={()=>openEdit({title:"Edit Read",fields:[{key:"title",label:"Title"},{key:"url",label:"URL"},{key:"desc",label:"Description",multi:true}],initial:r,onSave:f=>up("reads",i,f)})} onDel={()=>delItem("reads",i)}/></div>}</Card></a>)}
+      </div>
+      {admin&&<div style={{marginTop:"12px"}}><Btn small onClick={()=>openEdit({title:"Add Read",fields:[{key:"title",label:"Title"},{key:"url",label:"URL"},{key:"desc",label:"Description",multi:true}],initial:{},onSave:f=>add("reads",f)})}>+ Add Read</Btn></div>}
+    </Sec>
+    <SocialBar d={d}/>
+  </div>;
+
+  const PubPage=()=><div>
+    <div style={{display:"flex",gap:"8px",marginBottom:"30px",background:"rgba(13,13,26,.6)",padding:"6px",borderRadius:"10px",border:"1px solid rgba(99,102,241,.08)",width:"fit-content"}}>
+      <TabBtn active={pubTab==="papers"} onClick={()=>setPubTab("papers")}>Papers</TabBtn>
+      <TabBtn active={pubTab==="projects"} onClick={()=>setPubTab("projects")}>Current Projects</TabBtn>
+    </div>
+    {pubTab==="papers"&&<div>
+      {["journal","conference"].map(type=><div key={type} style={{marginBottom:"36px"}}>
+        <h3 style={{fontSize:"14px",fontWeight:600,color:"#818cf8",marginBottom:"14px",textTransform:"uppercase",letterSpacing:"1px"}}>{type==="journal"?"Journal Articles":"Conference Papers"}</h3>
+        {d.publications.filter(p=>p.type===type).map((p,i)=>{const ri=d.publications.indexOf(p);return<Card key={i} style={{marginBottom:"10px"}}><a href={p.link} target="_blank" rel="noopener noreferrer" style={{fontSize:"15px",fontWeight:600,color:"#e2e8f0",lineHeight:1.5,display:"block",marginBottom:"6px"}}>{p.title}</a><p style={{color:"#94a3b8",fontSize:"13px",marginBottom:"6px"}}>{p.authors}</p><div style={{display:"flex",gap:"8px",alignItems:"center",flexWrap:"wrap"}}><Tag>{p.venue}</Tag><span style={{color:"#6366f1",fontSize:"13px",fontWeight:600}}>{p.year}</span></div><AdminBtns onEdit={()=>openEdit({title:"Edit Publication",fields:[{key:"title",label:"Title"},{key:"authors",label:"Authors"},{key:"venue",label:"Venue"},{key:"year",label:"Year"},{key:"link",label:"Link"},{key:"type",label:"Type (journal/conference)"}],initial:p,onSave:f=>up("publications",ri,f)})} onDel={()=>delItem("publications",ri)}/></Card>})}
+      </div>)}
+      {admin&&<Btn small onClick={()=>openEdit({title:"Add Publication",fields:[{key:"title",label:"Title"},{key:"authors",label:"Authors"},{key:"venue",label:"Venue"},{key:"year",label:"Year"},{key:"link",label:"Link"},{key:"type",label:"Type (journal/conference)"}],initial:{type:"journal"},onSave:f=>add("publications",f)})}>+ Add Publication</Btn>}
+    </div>}
+    {pubTab==="projects"&&<Sec title="Current Projects">
+      {d.projects.map((p,i)=><Card key={i} style={{marginBottom:"14px"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",flexWrap:"wrap",gap:"8px"}}><h3 style={{fontSize:"16px",fontWeight:600,color:"#e2e8f0"}}>{p.title}</h3><span style={{padding:"3px 10px",borderRadius:"12px",fontSize:"11px",fontWeight:600,background:p.status==="Active"?"rgba(16,185,129,.12)":"rgba(99,102,241,.12)",color:p.status==="Active"?"#10b981":"#a5b4fc",border:`1px solid ${p.status==="Active"?"rgba(16,185,129,.2)":"rgba(99,102,241,.15)"}`}}>{p.status}</span></div><p style={{color:"#94a3b8",fontSize:"14px",lineHeight:1.7,margin:"10px 0"}}>{p.desc}</p>{p.tech&&<div style={{display:"flex",gap:"6px",flexWrap:"wrap"}}>{p.tech.map((t,j)=><Tag key={j}>{t}</Tag>)}</div>}<AdminBtns onEdit={()=>openEdit({title:"Edit Project",fields:[{key:"title",label:"Title"},{key:"status",label:"Status"},{key:"desc",label:"Description",multi:true},{key:"techStr",label:"Tech (comma-separated)"}],initial:{...p,techStr:(p.tech||[]).join(", ")},onSave:f=>{const np={...f,tech:f.techStr?f.techStr.split(",").map(s=>s.trim()):[]};delete np.techStr;up("projects",i,np)}})} onDel={()=>delItem("projects",i)}/></Card>)}
+      {admin&&<Btn small onClick={()=>openEdit({title:"Add Project",fields:[{key:"title",label:"Title"},{key:"status",label:"Status"},{key:"desc",label:"Description",multi:true},{key:"techStr",label:"Tech (comma-separated)"}],initial:{status:"Active"},onSave:f=>{const np={...f,tech:f.techStr?f.techStr.split(",").map(s=>s.trim()):[]};delete np.techStr;add("projects",np)}})}>+ Add Project</Btn>}
+    </Sec>}
+    <SocialBar d={d}/>
+  </div>;
+
+  const GalPage=()=><div>
+    <div style={{display:"flex",gap:"8px",marginBottom:"30px",background:"rgba(13,13,26,.6)",padding:"6px",borderRadius:"10px",border:"1px solid rgba(99,102,241,.08)",width:"fit-content"}}>
+      <TabBtn active={galTab==="photos"} onClick={()=>setGalTab("photos")}>Photos</TabBtn>
+      <TabBtn active={galTab==="videos"} onClick={()=>setGalTab("videos")}>Videos</TabBtn>
+    </div>
+    {galTab==="photos"&&<div>
+      {d.gallery.photos.map((yr,yi)=><Sec key={yi} title={yr.year}><div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(200px,1fr))",gap:"14px"}}>{yr.items.map((img,ii)=><div key={ii} style={{borderRadius:"12px",overflow:"hidden",border:"1px solid rgba(99,102,241,.1)",background:"#13131f"}}><img src={img.url} alt={img.caption} style={{width:"100%",height:"180px",objectFit:"cover",display:"block"}} onError={e=>{e.target.style.display="none"}}/><div style={{padding:"10px 12px"}}><p style={{color:"#cbd5e1",fontSize:"13px"}}>{img.caption}</p>{admin&&<div style={{marginTop:"6px",display:"flex",gap:"4px"}}><Btn small onClick={()=>openEdit({title:"Edit Photo",fields:[{key:"url",label:"Image URL"},{key:"caption",label:"Caption"}],initial:img,onSave:f=>{const g={...d.gallery};g.photos=[...g.photos];g.photos[yi]={...g.photos[yi],items:[...g.photos[yi].items]};g.photos[yi].items[ii]=f;setD({...d,gallery:g})}})}>Edit</Btn><Btn small danger onClick={()=>{const g={...d.gallery};g.photos=[...g.photos];g.photos[yi]={...g.photos[yi],items:[...g.photos[yi].items]};g.photos[yi].items.splice(ii,1);setD({...d,gallery:g})}}>×</Btn></div>}</div></div>)}</div>{admin&&<div style={{marginTop:"10px"}}><Btn small onClick={()=>openEdit({title:"Add Photo to "+yr.year,fields:[{key:"url",label:"Image URL"},{key:"caption",label:"Caption"}],initial:{},onSave:f=>{const g={...d.gallery};g.photos=[...g.photos];g.photos[yi]={...g.photos[yi],items:[...g.photos[yi].items,f]};setD({...d,gallery:g})}})}>+ Add Photo</Btn></div>}</Sec>)}
+      {admin&&<Btn small onClick={()=>openEdit({title:"Add Year Album",fields:[{key:"year",label:"Year"}],initial:{},onSave:f=>{const g={...d.gallery};g.photos=[...g.photos,{year:f.year,items:[]}];setD({...d,gallery:g})}})}>+ Add Year Album</Btn>}
+    </div>}
+    {galTab==="videos"&&<Sec title="Videos"><div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(320px,1fr))",gap:"16px"}}>{d.gallery.videos.map((v,i)=>{const ytId=getYTId(v.url);return<Card key={i} style={{padding:0,overflow:"hidden"}}>{ytId?<iframe src={`https://www.youtube.com/embed/${ytId}`} title={v.title} style={{width:"100%",height:"200px",border:"none"}} allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowFullScreen/>:<div style={{width:"100%",height:"200px",background:"#1a1a2e",display:"flex",alignItems:"center",justifyContent:"center",color:"#64748b",fontSize:"13px"}}>Invalid YouTube URL</div>}<div style={{padding:"16px"}}><h4 style={{fontSize:"15px",fontWeight:600,color:"#e2e8f0",marginBottom:"4px"}}>{v.title}</h4><p style={{color:"#94a3b8",fontSize:"13px"}}>{v.desc}</p>{admin&&<div style={{marginTop:"8px",display:"flex",gap:"4px"}}><Btn small onClick={()=>openEdit({title:"Edit Video",fields:[{key:"title",label:"Title"},{key:"url",label:"YouTube URL"},{key:"desc",label:"Description"}],initial:v,onSave:f=>{const g={...d.gallery};g.videos=[...g.videos];g.videos[i]=f;setD({...d,gallery:g})}})}>Edit</Btn><Btn small danger onClick={()=>{const g={...d.gallery};g.videos=[...g.videos];g.videos.splice(i,1);setD({...d,gallery:g})}}>×</Btn></div>}</div></Card>})}</div>{admin&&<div style={{marginTop:"12px"}}><Btn small onClick={()=>openEdit({title:"Add Video",fields:[{key:"title",label:"Title"},{key:"url",label:"YouTube URL"},{key:"desc",label:"Description"}],initial:{},onSave:f=>{const g={...d.gallery};g.videos=[...g.videos,f];setD({...d,gallery:g})}})}>+ Add Video</Btn></div>}</Sec>}
+    <SocialBar d={d}/>
+  </div>;
+
+  const BlogPage=()=><div>
+    <Sec title="Blog & Writing"><div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))",gap:"16px"}}>{d.blogs.map((b,i)=><Card key={i} style={{display:"flex",flexDirection:"column"}}><span style={{color:"#6366f1",fontSize:"12px",fontWeight:600,marginBottom:"8px"}}>{b.date}</span><a href={b.link} target="_blank" rel="noopener noreferrer" style={{fontSize:"15px",fontWeight:600,color:"#e2e8f0",marginBottom:"8px",lineHeight:1.4}}>{b.title}</a><p style={{color:"#94a3b8",fontSize:"13px",lineHeight:1.6,flex:1}}>{b.summary}</p><AdminBtns onEdit={()=>openEdit({title:"Edit Blog",fields:[{key:"title",label:"Title"},{key:"date",label:"Date"},{key:"summary",label:"Summary",multi:true},{key:"link",label:"Link"}],initial:b,onSave:f=>up("blogs",i,f)})} onDel={()=>delItem("blogs",i)}/></Card>)}</div>{admin&&<div style={{marginTop:"14px"}}><Btn small onClick={()=>openEdit({title:"Add Blog",fields:[{key:"title",label:"Title"},{key:"date",label:"Date"},{key:"summary",label:"Summary",multi:true},{key:"link",label:"Link"}],initial:{},onSave:f=>add("blogs",f)})}>+ Add Blog</Btn></div>}</Sec>
+    <SocialBar d={d}/>
+  </div>;
+
+  const CVPage=()=><div>
+    <Sec title="Curriculum Vitae"><Card>
+      <p style={{color:"#94a3b8",fontSize:"14px",lineHeight:1.8,marginBottom:"24px"}}>For a detailed PDF, please contact me via email.</p>
+      <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8",marginBottom:"10px"}}>Summary</h3>
+      <p style={{color:"#cbd5e1",fontSize:"14px",lineHeight:1.8,marginBottom:"24px"}}>{d.bio}</p>
+      <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8",marginBottom:"10px"}}>Education</h3>
+      {d.education.map((e,i)=><p key={i} style={{color:"#cbd5e1",fontSize:"14px",marginBottom:"6px"}}>• {e.degree} — {e.school} {e.year&&`(${e.year})`}</p>)}
+      <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8",marginBottom:"10px",marginTop:"20px"}}>Publications ({d.publications.length})</h3>
+      {d.publications.map((p,i)=><p key={i} style={{color:"#cbd5e1",fontSize:"13px",marginBottom:"8px",lineHeight:1.6}}>[{i+1}] {p.authors}. "{p.title}." <i>{p.venue}</i>, {p.year}.</p>)}
+    </Card></Sec>
+    <SocialBar d={d}/>
+  </div>;
+
+  const navItems=[{id:"home",label:"Home"},{id:"publications",label:"Publications"},{id:"gallery",label:"Gallery"},{id:"blog",label:"Blog"},{id:"cv",label:"CV"}];
+
+  return <div style={{minHeight:"100vh",background:"#0a0a0f"}}>
+    <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:scrollY>50?"rgba(10,10,15,.95)":"transparent",backdropFilter:scrollY>50?"blur(20px)":"none",borderBottom:scrollY>50?"1px solid rgba(99,102,241,.1)":"none",transition:"all .3s",padding:"0 24px"}}>
+      <div style={{maxWidth:"1100px",margin:"0 auto",display:"flex",alignItems:"center",justifyContent:"space-between",height:"60px"}}>
+        <span onClick={logoClick} style={{fontWeight:700,fontSize:"18px",background:"linear-gradient(135deg,#6366f1,#a78bfa)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",cursor:"pointer",userSelect:"none"}}>THM</span>
+        <div style={{display:"flex",gap:"4px",alignItems:"center",flexWrap:"wrap"}}>
+          {navItems.map(n=><TabBtn key={n.id} active={page===n.id} onClick={()=>setPage(n.id)}>{n.label}</TabBtn>)}
+          {admin&&<React.Fragment><div style={{width:"1px",height:"24px",background:"rgba(99,102,241,.2)",margin:"0 6px"}}/><span style={{fontSize:"11px",color:"#10b981",fontWeight:600,letterSpacing:"1px"}}>● ADMIN</span><button onClick={()=>setAdmin(false)} style={{padding:"5px 10px",borderRadius:"6px",border:"1px solid rgba(239,68,68,.3)",background:"transparent",color:"#ef4444",fontSize:"11px",cursor:"pointer",marginLeft:"4px"}}>Logout</button></React.Fragment>}
+        </div>
+      </div>
+    </nav>
+    <main style={{maxWidth:"1100px",margin:"0 auto",padding:"90px 24px 40px"}}>
+      {page==="home"&&<HomePage/>}
+      {page==="publications"&&<PubPage/>}
+      {page==="gallery"&&<GalPage/>}
+      {page==="blog"&&<BlogPage/>}
+      {page==="cv"&&<CVPage/>}
+    </main>
+    <footer style={{borderTop:"1px solid rgba(99,102,241,.1)",padding:"24px",textAlign:"center"}}><p style={{color:"#475569",fontSize:"12px"}}>© 2025 {d.name}. Built with passion for research.</p></footer>
+
+    {loginOpen&&<Modal onClose={()=>{setLoginOpen(false);setPw("");setPwErr("")}}><h3 style={{fontSize:"20px",fontWeight:700,color:"#e2e8f0",marginBottom:"8px"}}>Admin Login</h3><p style={{color:"#64748b",fontSize:"13px",marginBottom:"20px"}}>Enter your admin password to manage content.</p><Inp label="Password" value={pw} onChange={e=>{setPw(e.target.value);setPwErr("")}} type="password"/>{pwErr&&<p style={{color:"#ef4444",fontSize:"13px",marginBottom:"10px"}}>{pwErr}</p>}<div style={{display:"flex",gap:"10px",justifyContent:"flex-end"}}><Btn onClick={()=>{setLoginOpen(false);setPw("");setPwErr("")}}>Cancel</Btn><Btn primary onClick={login}>Login</Btn></div></Modal>}
+
+    {editModal&&<Modal onClose={closeEdit}><h3 style={{fontSize:"20px",fontWeight:700,color:"#e2e8f0",marginBottom:"20px"}}>{editModal.title}</h3>{editModal.fields.map(f=><Inp key={f.key} label={f.label} value={editForm[f.key]||""} onChange={e=>setEditForm({...editForm,[f.key]:e.target.value})} multi={f.multi} type={f.type}/>)}<div style={{display:"flex",gap:"10px",justifyContent:"flex-end",marginTop:"8px"}}><Btn onClick={closeEdit}>Cancel</Btn><Btn primary onClick={saveEdit}>Save</Btn></div></Modal>}
+  </div>;
+}
+
+ReactDOM.render(<App/>, document.getElementById("root"));
+</script>
+</body>
+</html>
