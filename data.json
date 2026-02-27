@@ -26,14 +26,19 @@
     {
       "degree": "Ph.D. in Electrical Engineering",
       "school": "National Kaohsiung University of Science and Technology (NKUST)",
-      "year": "Present",
+      "year": "Graduating - June 2026",
       "details": "Intelligent System Lab (ISLab)"
     },
     {
       "degree": "M.Sc.",
       "school": "National Central University (NCU), Taiwan",
-      "year": "",
+      "year": "2020",
       "details": ""
+    },
+    {
+      "degree": "Bachelor of Technology",
+      "school": "Maharshi Dayanand University - (MDU) - India",
+      "year": "2015"
     }
   ],
   "experience": [
@@ -44,14 +49,14 @@
       "details": "Health data NLP research"
     },
     {
-      "role": "Researcher",
+      "role": "Research Assistant",
       "org": "Academia Sinica, Taiwan",
       "period": "",
       "details": "Social Networking & Human-Centered Computing"
     },
     {
-      "role": "Researcher",
-      "org": "National Chengchi University (NCCU), Taiwan",
+      "role": "Research Assistant",
+      "org": "National Central University (NCU), Taiwan",
       "period": "",
       "details": ""
     }
@@ -88,6 +93,14 @@
       "year": "2024",
       "link": "https://www.jmir.org/2024/1/e58278",
       "type": "journal"
+    },
+    {
+      "type": "journal",
+      "title": "EFFResNet-ViT: A Fusion-Based Convolutional and Vision Transformer Model for Explainable Medical Image Classification",
+      "authors": "Hussain, Tahir and Shouno, Hayaru and Hussain, Abid and Hussain, Dostdar and Ismail, Muhammad and Hussain Mir, Tatheer and Rong Hsu, Fang and Alam, Taukir and Anonna Akhy, Shabnur",
+      "venue": "IEEE Access",
+      "year": "2025",
+      "link": "https://ieeexplore.ieee.org/abstract/document/10938132"
     }
   ],
   "projects": [
@@ -117,7 +130,7 @@
     {
       "title": "When AI Knows Too Much: Safeguarding Sensitive Health Data",
       "date": "Nov 29, 2025",
-      "summary": "Behind the Paper ÃÂ¢ÃÂÃÂ npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
+      "summary": "Behind the Paper ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
       "link": "https://communities.springernature.com/posts/when-ai-knows-too-much-safeguarding-sensitive-health-data-becomes-critical"
     },
     {
@@ -164,24 +177,25 @@
         "items": []
       }
     ],
-    "videos": [
-      {
-        "title": "Introduction to NLP Research",
-        "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        "desc": "Overview of our NLP research direction at ISLab"
-      }
-    ]
+    "videos": []
   },
-  "reads": [
+  "reads": [],
+  "cvSections": [
     {
-      "title": "Attention Is All You Need",
-      "url": "https://arxiv.org/abs/1706.03762",
-      "desc": "The foundational transformer paper that revolutionized NLP."
+      "id": "skills",
+      "title": "Technical Skills",
+      "content": "Programming: Python, R, Java, JavaScript\nFrameworks: PyTorch, TensorFlow, Hugging Face Transformers\nTools: Git, Docker, LaTeX, Linux\nLanguages: English, Urdu"
     },
     {
-      "title": "BERT: Pre-training of Deep Bidirectional Transformers",
-      "url": "https://arxiv.org/abs/1810.04805",
-      "desc": "Introduced bidirectional pre-training for language understanding."
+      "id": "awards",
+      "title": "Awards & Honors",
+      "content": "AI CUP 2023 — Privacy Protection and Medical Data Standardization Challenge participant\nResearch Assistant Fellowship, National Health Research Institutes, Taiwan"
     }
-  ]
+  ],
+  "cvToggles": {
+    "summary": true,
+    "education": true,
+    "experience": true,
+    "publications": true
+  }
 }
