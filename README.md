@@ -188,39 +188,9 @@ CNAME               → Custom domain config (optional)
 README.md           → This file
 ```
 
-### How Data Flows
-
-```
-┌─────────────┐     loads data.json      ┌──────────────┐
-│   Visitor    │ ◄──────────────────────  │  GitHub Repo │
-│  (browser)   │                          │  data.json   │
-└─────────────┘                          └──────────────┘
-                                               ▲
-┌─────────────┐     commits via API       │
-│    Admin     │ ────────────────────────► │
-│  (browser)   │   (GitHub token in RAM)
-└─────────────┘
-```
-
-1. **On page load:** Fetches `data.json` from the public GitHub API (no token needed)
-2. **Falls back to `DEFAULTS`** if `data.json` doesn't exist yet
-3. **On publish:** Commits updated `data.json` to the repo using the GitHub Contents API
-
 ---
 
 ## 🎨 Customization
-
-### Changing Colors
-
-The color scheme uses Indigo/Violet throughout. Search and replace these values in `index.html`:
-
-| Token | Current | What it affects |
-|-------|---------|----------------|
-| `#6366f1` | Indigo-500 | Primary accent |
-| `#8b5cf6` | Violet-500 | Gradient secondary |
-| `#a5b4fc` | Indigo-300 | Text accent |
-| `#818cf8` | Indigo-400 | Links, labels |
-| `#0a0a0f` | Near-black | Background |
 
 ### Adding New Pages
 
@@ -247,7 +217,7 @@ The color scheme uses Indigo/Violet throughout. Search and replace these values 
 
 ## 📄 License
 
-MIT License — Free to use, modify, and distribute.
+MIT License — Free to use, modify, and distribute. Just include credits in your repo.
 
 ---
 
