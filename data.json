@@ -111,24 +111,13 @@
         "Deep Learning",
         "Medical AI"
       ]
-    },
-    {
-      "title": "Multi-label Advertising Image Classification",
-      "status": "Completed",
-      "desc": "Classifying advertising images using CNN and Vision Transformer architectures with a novel inter-annotation agreement metric.",
-      "tech": [
-        "ViT",
-        "Swin",
-        "CNN",
-        "Computer Vision"
-      ]
     }
   ],
   "blogs": [
     {
       "title": "When AI Knows Too Much: Safeguarding Sensitive Health Data",
       "date": "Nov 29, 2025",
-      "summary": "Behind the Paper Ã¢ÂÂ npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
+      "summary": "Behind the Paper ÃÂ¢ÃÂÃÂ npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
       "link": "https://communities.springernature.com/posts/when-ai-knows-too-much-safeguarding-sensitive-health-data-becomes-critical"
     },
     {
@@ -168,29 +157,11 @@
     "photos": [
       {
         "year": "2025",
-        "items": [
-          {
-            "url": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400",
-            "caption": "Research Conference 2025"
-          },
-          {
-            "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400",
-            "caption": "Lab Meeting"
-          }
-        ]
+        "items": []
       },
       {
         "year": "2024",
-        "items": [
-          {
-            "url": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400",
-            "caption": "AI CUP Competition"
-          },
-          {
-            "url": "https://images.unsplash.com/photo-1559223607-a43c990c692c?w=400",
-            "caption": "Campus Life"
-          }
-        ]
+        "items": []
       }
     ],
     "videos": [
