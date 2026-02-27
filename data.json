@@ -1,0 +1,216 @@
+{
+  "name": "Tatheer Hussain Mir",
+  "title": "Ph.D. Researcher",
+  "affiliation": "Intelligent System Lab (ISLab), National Kaohsiung University of Science and Technology",
+  "location": "Kaohsiung, Taiwan",
+  "email": "tatheer.mir@nkust.edu.tw",
+  "orcid": "0009-0007-8409-8189",
+  "github": "TatheerHussain",
+  "medium": "tatheerhussainmir",
+  "scholar": "",
+  "linkedin": "",
+  "twitter": "",
+  "profilePhoto": "",
+  "bio": "I am a Ph.D. researcher at the Intelligent System Lab (ISLab), Department of Electrical Engineering, National Kaohsiung University of Science and Technology (NKUST), Taiwan. My research focuses on Natural Language Processing, Responsible AI, Health Data Privacy & De-identification, Human-Centered Computing, and Data-Driven AI systems. Previously, I was a researcher at Academia Sinica, National Central University (NCU), and National Chengchi University (NCCU), Taiwan.",
+  "researchInterests": [
+    "Natural Language Processing",
+    "Responsible AI",
+    "Health Data De-identification",
+    "Human-Centered Computing",
+    "Large Language Models",
+    "Medical NLP",
+    "Computer Vision",
+    "Social Network Analysis"
+  ],
+  "education": [
+    {
+      "degree": "Ph.D. in Electrical Engineering",
+      "school": "National Kaohsiung University of Science and Technology (NKUST)",
+      "year": "Present",
+      "details": "Intelligent System Lab (ISLab)"
+    },
+    {
+      "degree": "M.Sc.",
+      "school": "National Central University (NCU), Taiwan",
+      "year": "",
+      "details": ""
+    }
+  ],
+  "experience": [
+    {
+      "role": "Research Assistant",
+      "org": "National Institute of Cancer Research, NHRI",
+      "period": "",
+      "details": "Health data NLP research"
+    },
+    {
+      "role": "Researcher",
+      "org": "Academia Sinica, Taiwan",
+      "period": "",
+      "details": "Social Networking & Human-Centered Computing"
+    },
+    {
+      "role": "Researcher",
+      "org": "National Chengchi University (NCCU), Taiwan",
+      "period": "",
+      "details": ""
+    }
+  ],
+  "publications": [
+    {
+      "title": "Leveraging large language models for the deidentification and temporal normalization of sensitive health information in electronic health records",
+      "authors": "Hong-Jie Dai, Tatheer Hussain Mir, Hao-Ping Yang & Zi-Rui Zhao",
+      "venue": "npj Digital Medicine",
+      "year": "2025",
+      "link": "https://www.nature.com/articles/s41746-025-01921-7",
+      "type": "journal"
+    },
+    {
+      "title": "Multi-label advertising image classification using traditional deep neural networks and vision language models",
+      "authors": "Tatheer Hussain Mir, Jui-Cheng Wei, Mutiara Simanjuntak, You-Chen Zhang, Jia-Bin Chen & Hong-Jie Dai",
+      "venue": "Multimedia Tools and Applications (Springer)",
+      "year": "2025",
+      "link": "https://link.springer.com/article/10.1007/s11042-025-20940-w",
+      "type": "journal"
+    },
+    {
+      "title": "Deidentification and Temporal Normalization of the Electronic Health Record Notes Using Large Language Models",
+      "authors": "Tatheer Hussain Mir et al.",
+      "venue": "CCIS vol 2148 (Springer)",
+      "year": "2025",
+      "link": "https://link.springer.com/chapter/10.1007/978-981-97-7966-6_1",
+      "type": "conference"
+    },
+    {
+      "title": "Evaluating an NLP-Driven AI-Assisted ICD-10-CM Coding System for DRGs in a Real Hospital Environment",
+      "authors": "Hong-Jie Dai, ... Tatheer Hussain Mir, ... Vincent S Tseng",
+      "venue": "Journal of Medical Internet Research",
+      "year": "2024",
+      "link": "https://www.jmir.org/2024/1/e58278",
+      "type": "journal"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Health Data De-identification with LLMs",
+      "status": "Active",
+      "desc": "Developing large language model-based pipelines for automatic de-identification of sensitive health information in electronic health records.",
+      "tech": [
+        "LLM",
+        "NLP",
+        "CRF",
+        "BERT"
+      ]
+    },
+    {
+      "title": "AI-Assisted ICD-10 Medical Coding",
+      "status": "Active",
+      "desc": "Building NLP-driven systems for automatic ICD-10-CM code assignment in real hospital environments to improve diagnosis related group accuracy.",
+      "tech": [
+        "NLP",
+        "Deep Learning",
+        "Medical AI"
+      ]
+    },
+    {
+      "title": "Multi-label Advertising Image Classification",
+      "status": "Completed",
+      "desc": "Classifying advertising images using CNN and Vision Transformer architectures with a novel inter-annotation agreement metric.",
+      "tech": [
+        "ViT",
+        "Swin",
+        "CNN",
+        "Computer Vision"
+      ]
+    }
+  ],
+  "blogs": [
+    {
+      "title": "When AI Knows Too Much: Safeguarding Sensitive Health Data",
+      "date": "Nov 29, 2025",
+      "summary": "Behind the Paper — npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
+      "link": "https://communities.springernature.com/posts/when-ai-knows-too-much-safeguarding-sensitive-health-data-becomes-critical"
+    },
+    {
+      "title": "NLP Lecture Series: From Basic to Advance Level",
+      "date": "Oct 7, 2020",
+      "summary": "A comprehensive introduction to NLP covering key concepts, tools, and applications.",
+      "link": "https://tatheerhussainmir.medium.com/nlp-lecture-series-from-basic-to-advance-level-part-1-fe1ee2b87dd4"
+    },
+    {
+      "title": "Language Modelling",
+      "date": "2021",
+      "summary": "Exploring the fundamentals of language modelling and predicting words in NLP.",
+      "link": "https://tatheerhussainmir.medium.com/language-modelling-6349bbb3737a"
+    },
+    {
+      "title": "Detailed Outline for a Comprehensive NLP Course",
+      "date": "Feb 9, 2023",
+      "summary": "Structured curriculum from NLP basics to advanced techniques including transformers.",
+      "link": "https://tatheerhussainmir.medium.com/detailed-outline-for-a-comprehensive-nlp-course-covering-topics-from-the-basics-to-advanced-f88c87788144"
+    }
+  ],
+  "news": [
+    {
+      "text": "New paper published in npj Digital Medicine ",
+      "date": "Aug 2025"
+    },
+    {
+      "text": "Paper on multi-label advertising image classification published in Multimedia Tools & Applications",
+      "date": "Jun 2025"
+    },
+    {
+      "text": "Behind the Paper post published on Springer Nature Research Communities",
+      "date": "Nov 2025"
+    }
+  ],
+  "gallery": {
+    "photos": [
+      {
+        "year": "2025",
+        "items": [
+          {
+            "url": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400",
+            "caption": "Research Conference 2025"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400",
+            "caption": "Lab Meeting"
+          }
+        ]
+      },
+      {
+        "year": "2024",
+        "items": [
+          {
+            "url": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400",
+            "caption": "AI CUP Competition"
+          },
+          {
+            "url": "https://images.unsplash.com/photo-1559223607-a43c990c692c?w=400",
+            "caption": "Campus Life"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "title": "Introduction to NLP Research",
+        "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "desc": "Overview of our NLP research direction at ISLab"
+      }
+    ]
+  },
+  "reads": [
+    {
+      "title": "Attention Is All You Need",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "desc": "The foundational transformer paper that revolutionized NLP."
+    },
+    {
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers",
+      "url": "https://arxiv.org/abs/1810.04805",
+      "desc": "Introduced bidirectional pre-training for language understanding."
+    }
+  ]
+}
