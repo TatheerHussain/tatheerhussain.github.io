@@ -22,14 +22,14 @@ a{color:#818cf8;text-decoration:none;transition:color .2s}a:hover{color:#a5b4fc}
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0a0a0f}::-webkit-scrollbar-thumb{background:#2d2d44;border-radius:3px}
 input:focus,textarea:focus{border-color:rgba(99,102,241,.5)!important;outline:none}
 @keyframes float{0%,100%{transform:translateY(0);opacity:0}25%{opacity:1}50%{transform:translateY(-100vh);opacity:.5}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(99,102,241,.3)}50%{box-shadow:0 0 20px 10px rgba(99,102,241,.1)}}
+.nav-solid{background:rgba(10,10,15,.95)!important;backdrop-filter:blur(20px)!important;border-bottom:1px solid rgba(99,102,241,.1)!important}
 </style>
 </head>
 <body>
 <div id="root"></div>
 <script type="text/babel">
-const {useState,useEffect,useRef} = React;
+const {useState,useEffect,useRef,useCallback} = React;
 
 const INIT = {
   name:"Tatheer Hussain Mir", title:"Ph.D. Researcher",
@@ -88,13 +88,13 @@ const getYTId=(url)=>{const m=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?
 
 const SocialBar=({d})=>{
   const links=[
-    d.email&&{icon:"✉",href:`mailto:${d.email}`,label:"Email"},
-    d.github&&{icon:"⌂",href:`https://github.com/${d.github}`,label:"GitHub"},
-    d.medium&&{icon:"✎",href:`https://${d.medium}.medium.com`,label:"Medium"},
-    d.orcid&&{icon:"⊕",href:`https://orcid.org/${d.orcid}`,label:"ORCID"},
-    d.scholar&&{icon:"🎓",href:d.scholar,label:"Scholar"},
+    d.email&&{icon:"\u2709",href:`mailto:${d.email}`,label:"Email"},
+    d.github&&{icon:"\u2302",href:`https://github.com/${d.github}`,label:"GitHub"},
+    d.medium&&{icon:"\u270E",href:`https://${d.medium}.medium.com`,label:"Medium"},
+    d.orcid&&{icon:"\u2295",href:`https://orcid.org/${d.orcid}`,label:"ORCID"},
+    d.scholar&&{icon:"\uD83C\uDF93",href:d.scholar,label:"Scholar"},
     d.linkedin&&{icon:"in",href:d.linkedin,label:"LinkedIn"},
-    d.twitter&&{icon:"𝕏",href:d.twitter,label:"Twitter/X"},
+    d.twitter&&{icon:"\uD835\uDD4F",href:d.twitter,label:"Twitter/X"},
   ].filter(Boolean);
   return <div style={{display:"flex",justifyContent:"center",gap:"12px",padding:"30px 0 10px",borderTop:"1px solid rgba(99,102,241,.08)",marginTop:"40px"}}>
     {links.map((l,i)=><a key={i} href={l.href} target="_blank" rel="noopener noreferrer" title={l.label} style={{width:"40px",height:"40px",borderRadius:"50%",display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(99,102,241,.08)",border:"1px solid rgba(99,102,241,.15)",color:"#a5b4fc",fontSize:"15px",fontWeight:700,textDecoration:"none",transition:"all .3s"}}>{l.icon}</a>)}
@@ -112,13 +112,27 @@ function App(){
   const[pwErr,setPwErr]=useState("");
   const[editModal,setEditModal]=useState(null);
   const[editForm,setEditForm]=useState({});
-  const[scrollY,setScrollY]=useState(0);
+  const[navSolid,setNavSolid]=useState(false);
   const[clicks,setClicks]=useState(0);
   const ct=useRef(null);
+  const navRef=useRef(null);
 
   useEffect(()=>{
-    const h=()=>setScrollY(window.scrollY);
-    window.addEventListener("scroll",h);
+    let ticking=false;
+    const h=()=>{
+      if(!ticking){
+        window.requestAnimationFrame(()=>{
+          const solid=window.scrollY>50;
+          if(navRef.current){
+            if(solid) navRef.current.classList.add("nav-solid");
+            else navRef.current.classList.remove("nav-solid");
+          }
+          ticking=false;
+        });
+        ticking=true;
+      }
+    };
+    window.addEventListener("scroll",h,{passive:true});
     const k=(e)=>{if(e.ctrlKey&&e.shiftKey&&e.key==="A"){e.preventDefault();setLoginOpen(true)}};
     window.addEventListener("keydown",k);
     return()=>{window.removeEventListener("scroll",h);window.removeEventListener("keydown",k)};
@@ -128,7 +142,7 @@ function App(){
   const login=()=>{if(pw===PASS){setAdmin(true);setLoginOpen(false);setPw("");setPwErr("")}else setPwErr("Invalid password")};
   const openEdit=(cfg)=>{setEditModal(cfg);setEditForm(cfg.initial||{})};
   const closeEdit=()=>{setEditModal(null);setEditForm({})};
-  const saveEdit=()=>{if(editModal?.onSave)editModal.onSave(editForm);closeEdit()};
+  const saveEdit=()=>{if(editModal&&editModal.onSave)editModal.onSave(editForm);closeEdit()};
   const delItem=(key,idx)=>{const c={...d};c[key]=[...c[key]];c[key].splice(idx,1);setD(c)};
   const up=(key,idx,form)=>{const c={...d};c[key]=[...c[key]];c[key][idx]=form;setD(c)};
   const add=(key,form)=>{const c={...d};c[key]=[...c[key],form];setD(c)};
@@ -139,29 +153,28 @@ function App(){
   const Btn=({children,onClick,primary,small,danger})=><button onClick={onClick} style={{padding:small?"5px 12px":"10px 22px",borderRadius:"8px",border:danger?"1px solid #ef4444":primary?"none":"1px solid rgba(99,102,241,.3)",background:danger?"transparent":primary?"linear-gradient(135deg,#6366f1,#8b5cf6)":"transparent",color:danger?"#ef4444":primary?"#fff":"#818cf8",fontSize:small?"11px":"14px",fontWeight:600,cursor:"pointer",transition:"all .2s"}}>{children}</button>;
   const Tag=({children})=><span style={{display:"inline-block",padding:"4px 12px",borderRadius:"20px",background:"rgba(99,102,241,.12)",color:"#a5b4fc",fontSize:"12px",fontWeight:500,border:"1px solid rgba(99,102,241,.15)"}}>{children}</span>;
   const Card=({children,style})=><div style={{background:"linear-gradient(145deg,rgba(19,19,31,.8),rgba(26,26,46,.6))",borderRadius:"12px",padding:"24px",border:"1px solid rgba(99,102,241,.1)",backdropFilter:"blur(10px)",transition:"all .3s",...style}}>{children}</div>;
-  const Sec=({title,children})=><section style={{marginBottom:"50px",animation:"fadeUp .6s ease-out"}}><div style={{display:"flex",alignItems:"center",gap:"12px",marginBottom:"24px"}}><div style={{width:"4px",height:"28px",background:"linear-gradient(180deg,#6366f1,#8b5cf6)",borderRadius:"2px"}}/><h2 style={{fontSize:"22px",fontWeight:700,background:"linear-gradient(135deg,#e2e8f0,#818cf8)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>{title}</h2></div>{children}</section>;
+  const Sec=({title,children})=><section style={{marginBottom:"50px"}}><div style={{display:"flex",alignItems:"center",gap:"12px",marginBottom:"24px"}}><div style={{width:"4px",height:"28px",background:"linear-gradient(180deg,#6366f1,#8b5cf6)",borderRadius:"2px"}}/><h2 style={{fontSize:"22px",fontWeight:700,background:"linear-gradient(135deg,#e2e8f0,#818cf8)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>{title}</h2></div>{children}</section>;
   const TabBtn=({active,onClick,children})=><button onClick={onClick} style={{padding:"8px 18px",borderRadius:"8px",border:"none",cursor:"pointer",background:active?"rgba(99,102,241,.15)":"transparent",color:active?"#a5b4fc":"#64748b",fontSize:"14px",fontWeight:500,transition:"all .2s"}}>{children}</button>;
-  const AdminBtns=({onEdit,onDel})=>admin?<div style={{marginTop:"10px",display:"flex",gap:"6px"}}>{onEdit&&<Btn small onClick={onEdit}>Edit</Btn>}{onDel&&<Btn small danger onClick={onDel}>×</Btn>}</div>:null;
+  const AdminBtns=({onEdit,onDel})=>admin?<div style={{marginTop:"10px",display:"flex",gap:"6px"}}>{onEdit&&<Btn small onClick={onEdit}>Edit</Btn>}{onDel&&<Btn small danger onClick={onDel}>x</Btn>}</div>:null;
 
   const ProfileAvatar=()=>{
     if(d.profilePhoto) return <img src={d.profilePhoto} alt={d.name} style={{width:"140px",height:"140px",borderRadius:"50%",objectFit:"cover",border:"3px solid rgba(99,102,241,.3)",flexShrink:0,animation:"pulse 3s infinite"}}/>;
     return <div style={{width:"140px",height:"140px",borderRadius:"50%",background:"linear-gradient(135deg,#6366f1,#8b5cf6)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"48px",fontWeight:700,color:"#fff",flexShrink:0,animation:"pulse 3s infinite"}}>{d.name.split(" ").map(w=>w[0]).join("").slice(0,2)}</div>;
   };
 
-  // ─── PAGES ───
   const HomePage=()=><div>
     <div style={{position:"relative",overflow:"hidden",borderRadius:"20px",background:"linear-gradient(135deg,#0f0f1a,#13132a 50%,#1a0f2e)",padding:"60px 40px",marginBottom:"50px",border:"1px solid rgba(99,102,241,.1)"}}>
       <div style={{position:"absolute",inset:0,overflow:"hidden"}}>{[...Array(12)].map((_,i)=><Dot key={i} i={i}/>)}<div style={{position:"absolute",top:"-50%",right:"-20%",width:"500px",height:"500px",borderRadius:"50%",background:"radial-gradient(circle,rgba(99,102,241,.08),transparent 70%)"}}/></div>
       <div style={{position:"relative",zIndex:1,display:"flex",gap:"40px",alignItems:"center",flexWrap:"wrap"}}>
         <div style={{position:"relative"}}>
           <ProfileAvatar/>
-          {admin&&<button onClick={()=>openEdit({title:"Profile Photo",fields:[{key:"profilePhoto",label:"Photo URL",type:"url"}],initial:{profilePhoto:d.profilePhoto},onSave:f=>setD({...d,profilePhoto:f.profilePhoto})})} style={{position:"absolute",bottom:"4px",right:"4px",width:"32px",height:"32px",borderRadius:"50%",background:"rgba(99,102,241,.8)",border:"none",color:"#fff",fontSize:"14px",cursor:"pointer"}}>📷</button>}
+          {admin&&<button onClick={()=>openEdit({title:"Profile Photo",fields:[{key:"profilePhoto",label:"Photo URL",type:"url"}],initial:{profilePhoto:d.profilePhoto},onSave:f=>setD({...d,profilePhoto:f.profilePhoto})})} style={{position:"absolute",bottom:"4px",right:"4px",width:"32px",height:"32px",borderRadius:"50%",background:"rgba(99,102,241,.8)",border:"none",color:"#fff",fontSize:"14px",cursor:"pointer"}}>{"\uD83D\uDCF7"}</button>}
         </div>
         <div style={{flex:1,minWidth:"260px"}}>
           <h1 style={{fontSize:"34px",fontWeight:800,marginBottom:"6px",background:"linear-gradient(135deg,#fff,#c7d2fe)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>{d.name}</h1>
           <p style={{fontSize:"17px",color:"#818cf8",fontWeight:500,marginBottom:"4px"}}>{d.title}</p>
           <p style={{fontSize:"14px",color:"#94a3b8",marginBottom:"12px"}}>{d.affiliation}</p>
-          <p style={{fontSize:"13px",color:"#64748b"}}>📍 {d.location}</p>
+          <p style={{fontSize:"13px",color:"#64748b"}}>{"\uD83D\uDCCD"} {d.location}</p>
           {admin&&<div style={{marginTop:"10px"}}><Btn small onClick={()=>openEdit({title:"Edit Profile",fields:[{key:"name",label:"Name"},{key:"title",label:"Title"},{key:"affiliation",label:"Affiliation"},{key:"location",label:"Location"},{key:"email",label:"Email"},{key:"orcid",label:"ORCID"},{key:"github",label:"GitHub"},{key:"medium",label:"Medium"},{key:"scholar",label:"Google Scholar URL"},{key:"linkedin",label:"LinkedIn URL"},{key:"twitter",label:"Twitter/X URL"}],initial:{name:d.name,title:d.title,affiliation:d.affiliation,location:d.location,email:d.email,orcid:d.orcid,github:d.github,medium:d.medium,scholar:d.scholar,linkedin:d.linkedin,twitter:d.twitter},onSave:f=>setD({...d,...f})})}>Edit Profile</Btn></div>}
         </div>
       </div>
@@ -202,7 +215,7 @@ function App(){
       {admin&&<Btn small onClick={()=>openEdit({title:"Add Publication",fields:[{key:"title",label:"Title"},{key:"authors",label:"Authors"},{key:"venue",label:"Venue"},{key:"year",label:"Year"},{key:"link",label:"Link"},{key:"type",label:"Type (journal/conference)"}],initial:{type:"journal"},onSave:f=>add("publications",f)})}>+ Add Publication</Btn>}
     </div>}
     {pubTab==="projects"&&<Sec title="Current Projects">
-      {d.projects.map((p,i)=><Card key={i} style={{marginBottom:"14px"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",flexWrap:"wrap",gap:"8px"}}><h3 style={{fontSize:"16px",fontWeight:600,color:"#e2e8f0"}}>{p.title}</h3><span style={{padding:"3px 10px",borderRadius:"12px",fontSize:"11px",fontWeight:600,background:p.status==="Active"?"rgba(16,185,129,.12)":"rgba(99,102,241,.12)",color:p.status==="Active"?"#10b981":"#a5b4fc",border:`1px solid ${p.status==="Active"?"rgba(16,185,129,.2)":"rgba(99,102,241,.15)"}`}}>{p.status}</span></div><p style={{color:"#94a3b8",fontSize:"14px",lineHeight:1.7,margin:"10px 0"}}>{p.desc}</p>{p.tech&&<div style={{display:"flex",gap:"6px",flexWrap:"wrap"}}>{p.tech.map((t,j)=><Tag key={j}>{t}</Tag>)}</div>}<AdminBtns onEdit={()=>openEdit({title:"Edit Project",fields:[{key:"title",label:"Title"},{key:"status",label:"Status"},{key:"desc",label:"Description",multi:true},{key:"techStr",label:"Tech (comma-separated)"}],initial:{...p,techStr:(p.tech||[]).join(", ")},onSave:f=>{const np={...f,tech:f.techStr?f.techStr.split(",").map(s=>s.trim()):[]};delete np.techStr;up("projects",i,np)}})} onDel={()=>delItem("projects",i)}/></Card>)}
+      {d.projects.map((p,i)=><Card key={i} style={{marginBottom:"14px"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",flexWrap:"wrap",gap:"8px"}}><h3 style={{fontSize:"16px",fontWeight:600,color:"#e2e8f0"}}>{p.title}</h3><span style={{padding:"3px 10px",borderRadius:"12px",fontSize:"11px",fontWeight:600,background:p.status==="Active"?"rgba(16,185,129,.12)":"rgba(99,102,241,.12)",color:p.status==="Active"?"#10b981":"#a5b4fc",border:"1px solid "+(p.status==="Active"?"rgba(16,185,129,.2)":"rgba(99,102,241,.15)")}}>{p.status}</span></div><p style={{color:"#94a3b8",fontSize:"14px",lineHeight:1.7,margin:"10px 0"}}>{p.desc}</p>{p.tech&&<div style={{display:"flex",gap:"6px",flexWrap:"wrap"}}>{p.tech.map((t,j)=><Tag key={j}>{t}</Tag>)}</div>}<AdminBtns onEdit={()=>openEdit({title:"Edit Project",fields:[{key:"title",label:"Title"},{key:"status",label:"Status"},{key:"desc",label:"Description",multi:true},{key:"techStr",label:"Tech (comma-separated)"}],initial:{...p,techStr:(p.tech||[]).join(", ")},onSave:f=>{const np={...f,tech:f.techStr?f.techStr.split(",").map(s=>s.trim()):[]};delete np.techStr;up("projects",i,np)}})} onDel={()=>delItem("projects",i)}/></Card>)}
       {admin&&<Btn small onClick={()=>openEdit({title:"Add Project",fields:[{key:"title",label:"Title"},{key:"status",label:"Status"},{key:"desc",label:"Description",multi:true},{key:"techStr",label:"Tech (comma-separated)"}],initial:{status:"Active"},onSave:f=>{const np={...f,tech:f.techStr?f.techStr.split(",").map(s=>s.trim()):[]};delete np.techStr;add("projects",np)}})}>+ Add Project</Btn>}
     </Sec>}
     <SocialBar d={d}/>
@@ -214,10 +227,10 @@ function App(){
       <TabBtn active={galTab==="videos"} onClick={()=>setGalTab("videos")}>Videos</TabBtn>
     </div>
     {galTab==="photos"&&<div>
-      {d.gallery.photos.map((yr,yi)=><Sec key={yi} title={yr.year}><div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(200px,1fr))",gap:"14px"}}>{yr.items.map((img,ii)=><div key={ii} style={{borderRadius:"12px",overflow:"hidden",border:"1px solid rgba(99,102,241,.1)",background:"#13131f"}}><img src={img.url} alt={img.caption} style={{width:"100%",height:"180px",objectFit:"cover",display:"block"}} onError={e=>{e.target.style.display="none"}}/><div style={{padding:"10px 12px"}}><p style={{color:"#cbd5e1",fontSize:"13px"}}>{img.caption}</p>{admin&&<div style={{marginTop:"6px",display:"flex",gap:"4px"}}><Btn small onClick={()=>openEdit({title:"Edit Photo",fields:[{key:"url",label:"Image URL"},{key:"caption",label:"Caption"}],initial:img,onSave:f=>{const g={...d.gallery};g.photos=[...g.photos];g.photos[yi]={...g.photos[yi],items:[...g.photos[yi].items]};g.photos[yi].items[ii]=f;setD({...d,gallery:g})}})}>Edit</Btn><Btn small danger onClick={()=>{const g={...d.gallery};g.photos=[...g.photos];g.photos[yi]={...g.photos[yi],items:[...g.photos[yi].items]};g.photos[yi].items.splice(ii,1);setD({...d,gallery:g})}}>×</Btn></div>}</div></div>)}</div>{admin&&<div style={{marginTop:"10px"}}><Btn small onClick={()=>openEdit({title:"Add Photo to "+yr.year,fields:[{key:"url",label:"Image URL"},{key:"caption",label:"Caption"}],initial:{},onSave:f=>{const g={...d.gallery};g.photos=[...g.photos];g.photos[yi]={...g.photos[yi],items:[...g.photos[yi].items,f]};setD({...d,gallery:g})}})}>+ Add Photo</Btn></div>}</Sec>)}
-      {admin&&<Btn small onClick={()=>openEdit({title:"Add Year Album",fields:[{key:"year",label:"Year"}],initial:{},onSave:f=>{const g={...d.gallery};g.photos=[...g.photos,{year:f.year,items:[]}];setD({...d,gallery:g})}})}>+ Add Year Album</Btn>}
+      {d.gallery.photos.map((yr,yi)=><Sec key={yi} title={yr.year}><div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(200px,1fr))",gap:"14px"}}>{yr.items.map((img,ii)=><div key={ii} style={{borderRadius:"12px",overflow:"hidden",border:"1px solid rgba(99,102,241,.1)",background:"#13131f"}}><img src={img.url} alt={img.caption} style={{width:"100%",height:"180px",objectFit:"cover",display:"block"}} onError={e=>{e.target.style.display="none"}}/><div style={{padding:"10px 12px"}}><p style={{color:"#cbd5e1",fontSize:"13px"}}>{img.caption}</p>{admin&&<div style={{marginTop:"6px",display:"flex",gap:"4px"}}><Btn small onClick={()=>openEdit({title:"Edit Photo",fields:[{key:"url",label:"Image URL"},{key:"caption",label:"Caption"}],initial:img,onSave:f=>{const g=JSON.parse(JSON.stringify(d.gallery));g.photos[yi].items[ii]=f;setD({...d,gallery:g})}})}>Edit</Btn><Btn small danger onClick={()=>{const g=JSON.parse(JSON.stringify(d.gallery));g.photos[yi].items.splice(ii,1);setD({...d,gallery:g})}}>x</Btn></div>}</div></div>)}</div>{admin&&<div style={{marginTop:"10px"}}><Btn small onClick={()=>openEdit({title:"Add Photo to "+yr.year,fields:[{key:"url",label:"Image URL"},{key:"caption",label:"Caption"}],initial:{},onSave:f=>{const g=JSON.parse(JSON.stringify(d.gallery));g.photos[yi].items.push(f);setD({...d,gallery:g})}})}>+ Add Photo</Btn></div>}</Sec>)}
+      {admin&&<Btn small onClick={()=>openEdit({title:"Add Year Album",fields:[{key:"year",label:"Year"}],initial:{},onSave:f=>{const g=JSON.parse(JSON.stringify(d.gallery));g.photos.push({year:f.year,items:[]});setD({...d,gallery:g})}})}>+ Add Year Album</Btn>}
     </div>}
-    {galTab==="videos"&&<Sec title="Videos"><div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(320px,1fr))",gap:"16px"}}>{d.gallery.videos.map((v,i)=>{const ytId=getYTId(v.url);return<Card key={i} style={{padding:0,overflow:"hidden"}}>{ytId?<iframe src={`https://www.youtube.com/embed/${ytId}`} title={v.title} style={{width:"100%",height:"200px",border:"none"}} allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowFullScreen/>:<div style={{width:"100%",height:"200px",background:"#1a1a2e",display:"flex",alignItems:"center",justifyContent:"center",color:"#64748b",fontSize:"13px"}}>Invalid YouTube URL</div>}<div style={{padding:"16px"}}><h4 style={{fontSize:"15px",fontWeight:600,color:"#e2e8f0",marginBottom:"4px"}}>{v.title}</h4><p style={{color:"#94a3b8",fontSize:"13px"}}>{v.desc}</p>{admin&&<div style={{marginTop:"8px",display:"flex",gap:"4px"}}><Btn small onClick={()=>openEdit({title:"Edit Video",fields:[{key:"title",label:"Title"},{key:"url",label:"YouTube URL"},{key:"desc",label:"Description"}],initial:v,onSave:f=>{const g={...d.gallery};g.videos=[...g.videos];g.videos[i]=f;setD({...d,gallery:g})}})}>Edit</Btn><Btn small danger onClick={()=>{const g={...d.gallery};g.videos=[...g.videos];g.videos.splice(i,1);setD({...d,gallery:g})}}>×</Btn></div>}</div></Card>})}</div>{admin&&<div style={{marginTop:"12px"}}><Btn small onClick={()=>openEdit({title:"Add Video",fields:[{key:"title",label:"Title"},{key:"url",label:"YouTube URL"},{key:"desc",label:"Description"}],initial:{},onSave:f=>{const g={...d.gallery};g.videos=[...g.videos,f];setD({...d,gallery:g})}})}>+ Add Video</Btn></div>}</Sec>}
+    {galTab==="videos"&&<Sec title="Videos"><div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(320px,1fr))",gap:"16px"}}>{d.gallery.videos.map((v,i)=>{const ytId=getYTId(v.url);return<Card key={i} style={{padding:0,overflow:"hidden"}}>{ytId?<iframe src={"https://www.youtube.com/embed/"+ytId} title={v.title} style={{width:"100%",height:"200px",border:"none"}} allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowFullScreen/>:<div style={{width:"100%",height:"200px",background:"#1a1a2e",display:"flex",alignItems:"center",justifyContent:"center",color:"#64748b",fontSize:"13px"}}>Invalid YouTube URL</div>}<div style={{padding:"16px"}}><h4 style={{fontSize:"15px",fontWeight:600,color:"#e2e8f0",marginBottom:"4px"}}>{v.title}</h4><p style={{color:"#94a3b8",fontSize:"13px"}}>{v.desc}</p>{admin&&<div style={{marginTop:"8px",display:"flex",gap:"4px"}}><Btn small onClick={()=>openEdit({title:"Edit Video",fields:[{key:"title",label:"Title"},{key:"url",label:"YouTube URL"},{key:"desc",label:"Description"}],initial:v,onSave:f=>{const g=JSON.parse(JSON.stringify(d.gallery));g.videos[i]=f;setD({...d,gallery:g})}})}>Edit</Btn><Btn small danger onClick={()=>{const g=JSON.parse(JSON.stringify(d.gallery));g.videos.splice(i,1);setD({...d,gallery:g})}}>x</Btn></div>}</div></Card>})}</div>{admin&&<div style={{marginTop:"12px"}}><Btn small onClick={()=>openEdit({title:"Add Video",fields:[{key:"title",label:"Title"},{key:"url",label:"YouTube URL"},{key:"desc",label:"Description"}],initial:{},onSave:f=>{const g=JSON.parse(JSON.stringify(d.gallery));g.videos.push(f);setD({...d,gallery:g})}})}>+ Add Video</Btn></div>}</Sec>}
     <SocialBar d={d}/>
   </div>;
 
@@ -232,9 +245,9 @@ function App(){
       <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8",marginBottom:"10px"}}>Summary</h3>
       <p style={{color:"#cbd5e1",fontSize:"14px",lineHeight:1.8,marginBottom:"24px"}}>{d.bio}</p>
       <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8",marginBottom:"10px"}}>Education</h3>
-      {d.education.map((e,i)=><p key={i} style={{color:"#cbd5e1",fontSize:"14px",marginBottom:"6px"}}>• {e.degree} — {e.school} {e.year&&`(${e.year})`}</p>)}
+      {d.education.map((e,i)=><p key={i} style={{color:"#cbd5e1",fontSize:"14px",marginBottom:"6px"}}>{"\u2022"} {e.degree} — {e.school} {e.year&&("("+e.year+")")}</p>)}
       <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8",marginBottom:"10px",marginTop:"20px"}}>Publications ({d.publications.length})</h3>
-      {d.publications.map((p,i)=><p key={i} style={{color:"#cbd5e1",fontSize:"13px",marginBottom:"8px",lineHeight:1.6}}>[{i+1}] {p.authors}. "{p.title}." <i>{p.venue}</i>, {p.year}.</p>)}
+      {d.publications.map((p,i)=><p key={i} style={{color:"#cbd5e1",fontSize:"13px",marginBottom:"8px",lineHeight:1.6}}>{"["+(i+1)+"] "}{p.authors}. "{p.title}." <i>{p.venue}</i>, {p.year}.</p>)}
     </Card></Sec>
     <SocialBar d={d}/>
   </div>;
@@ -242,12 +255,12 @@ function App(){
   const navItems=[{id:"home",label:"Home"},{id:"publications",label:"Publications"},{id:"gallery",label:"Gallery"},{id:"blog",label:"Blog"},{id:"cv",label:"CV"}];
 
   return <div style={{minHeight:"100vh",background:"#0a0a0f"}}>
-    <nav style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:scrollY>50?"rgba(10,10,15,.95)":"transparent",backdropFilter:scrollY>50?"blur(20px)":"none",borderBottom:scrollY>50?"1px solid rgba(99,102,241,.1)":"none",transition:"all .3s",padding:"0 24px"}}>
+    <nav ref={navRef} style={{position:"fixed",top:0,left:0,right:0,zIndex:100,background:"transparent",transition:"background .3s, border-bottom .3s, backdrop-filter .3s",padding:"0 24px",borderBottom:"1px solid transparent"}}>
       <div style={{maxWidth:"1100px",margin:"0 auto",display:"flex",alignItems:"center",justifyContent:"space-between",height:"60px"}}>
         <span onClick={logoClick} style={{fontWeight:700,fontSize:"18px",background:"linear-gradient(135deg,#6366f1,#a78bfa)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",cursor:"pointer",userSelect:"none"}}>THM</span>
         <div style={{display:"flex",gap:"4px",alignItems:"center",flexWrap:"wrap"}}>
           {navItems.map(n=><TabBtn key={n.id} active={page===n.id} onClick={()=>setPage(n.id)}>{n.label}</TabBtn>)}
-          {admin&&<React.Fragment><div style={{width:"1px",height:"24px",background:"rgba(99,102,241,.2)",margin:"0 6px"}}/><span style={{fontSize:"11px",color:"#10b981",fontWeight:600,letterSpacing:"1px"}}>● ADMIN</span><button onClick={()=>setAdmin(false)} style={{padding:"5px 10px",borderRadius:"6px",border:"1px solid rgba(239,68,68,.3)",background:"transparent",color:"#ef4444",fontSize:"11px",cursor:"pointer",marginLeft:"4px"}}>Logout</button></React.Fragment>}
+          {admin&&<React.Fragment><div style={{width:"1px",height:"24px",background:"rgba(99,102,241,.2)",margin:"0 6px"}}/><span style={{fontSize:"11px",color:"#10b981",fontWeight:600,letterSpacing:"1px"}}>{"\u25CF"} ADMIN</span><button onClick={()=>setAdmin(false)} style={{padding:"5px 10px",borderRadius:"6px",border:"1px solid rgba(239,68,68,.3)",background:"transparent",color:"#ef4444",fontSize:"11px",cursor:"pointer",marginLeft:"4px"}}>Logout</button></React.Fragment>}
         </div>
       </div>
     </nav>
@@ -258,7 +271,7 @@ function App(){
       {page==="blog"&&<BlogPage/>}
       {page==="cv"&&<CVPage/>}
     </main>
-    <footer style={{borderTop:"1px solid rgba(99,102,241,.1)",padding:"24px",textAlign:"center"}}><p style={{color:"#475569",fontSize:"12px"}}>© 2025 {d.name}. Built with passion for research.</p></footer>
+    <footer style={{borderTop:"1px solid rgba(99,102,241,.1)",padding:"24px",textAlign:"center"}}><p style={{color:"#475569",fontSize:"12px"}}>{"\u00A9"} 2025 {d.name}. Built with passion for research.</p></footer>
 
     {loginOpen&&<Modal onClose={()=>{setLoginOpen(false);setPw("");setPwErr("")}}><h3 style={{fontSize:"20px",fontWeight:700,color:"#e2e8f0",marginBottom:"8px"}}>Admin Login</h3><p style={{color:"#64748b",fontSize:"13px",marginBottom:"20px"}}>Enter your admin password to manage content.</p><Inp label="Password" value={pw} onChange={e=>{setPw(e.target.value);setPwErr("")}} type="password"/>{pwErr&&<p style={{color:"#ef4444",fontSize:"13px",marginBottom:"10px"}}>{pwErr}</p>}<div style={{display:"flex",gap:"10px",justifyContent:"flex-end"}}><Btn onClick={()=>{setLoginOpen(false);setPw("");setPwErr("")}}>Cancel</Btn><Btn primary onClick={login}>Login</Btn></div></Modal>}
 
