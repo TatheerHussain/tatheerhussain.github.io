@@ -11,7 +11,7 @@
   "linkedin": "https://www.linkedin.com/in/tatheer-hussain-m-09702045/",
   "twitter": "",
   "profilePhoto": "https://media.licdn.com/dms/image/v2/C5603AQFC6eS8Og2Bbg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516824764132?e=1773878400&v=beta&t=z_VJQQro9wIsFOO9jAahlQz0fCjlie_DtgNtBmrl228",
-  "bio": "I am a Ph.D. researcher at the Intelligent System Lab (ISLab), Department of Electrical Engineering, National Kaohsiung University of Science and Technology (NKUST), Taiwan. My research focuses on Natural Language Processing, Responsible AI, Health Data Privacy & De-identification, Human-Centered Computing, and Data-Driven AI systems. Previously, I was a researcher at Academia Sinica, National Central University (NCU), and National Chengchi University (NCCU), Taiwan.",
+  "bio": "I am a Ph.D. researcher at the Intelligent System Lab (ISLab), Department of Electrical Engineering, National Kaohsiung University of Science and Technology (NKUST), Taiwan. My research centers on Natural Language Processing (NLP), Responsible AI, Health Data Privacy & De-identification, and Human-Centered AI systems with a strong emphasis on data-driven and ethically grounded AI methodologies. I have contributed to work on AI-assisted de-identification of sensitive health information in electronic health records and clinical text and related topics in computational linguistics and privacy-preserving analytics.\n\nBefore my current role at NKUST, I gained research experience as a research assistant, collaborating on projects involving clinical NLP and AI systems, bolstering my expertise at institutions including Academia Sinica and the National Health Research Institutes (NHRI), Taiwan.\n\nMy publications span peer-reviewed venues in NLP, health informatics, and applied AI, with a focus on advancing computational techniques that serve real-world and ethically sensitive applications.",
   "researchInterests": [
     "Natural Language Processing",
     "Responsible AI",
@@ -128,7 +128,7 @@
     {
       "title": "When AI Knows Too Much: Safeguarding Sensitive Health Data",
       "date": "Nov 29, 2025",
-      "summary": "Behind the Paper â npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
+      "summary": "Behind the Paper Ã¢ÂÂ npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
       "link": "https://communities.springernature.com/posts/when-ai-knows-too-much-safeguarding-sensitive-health-data-becomes-critical"
     },
     {
@@ -156,12 +156,12 @@
       "date": "Aug 2025"
     },
     {
-      "text": "Paper on multi-label advertising image classification published in Multimedia Tools & Applications",
-      "date": "Jun 2025"
-    },
-    {
       "text": "Behind the Paper post published on Springer Nature Research Communities",
       "date": "Nov 2025"
+    },
+    {
+      "date": "20-02-2026",
+      "text": "New paper accepted in BMJ health care and informatics"
     }
   ],
   "gallery": {
