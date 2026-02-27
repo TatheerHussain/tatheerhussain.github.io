@@ -84,6 +84,9 @@ const INIT = {
 };
 
 const PASS="admin123";
+const STORAGE_KEY="thm_site_data";
+const loadData=()=>{try{const s=localStorage.getItem(STORAGE_KEY);if(s){const p=JSON.parse(s);return {...INIT,...p}}return INIT}catch(e){return INIT}};
+const saveData=(data)=>{try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data))}catch(e){}};
 const getYTId=(url)=>{const m=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/);return m?m[1]:null};
 
 const SocialBar=({d})=>{
@@ -102,7 +105,7 @@ const SocialBar=({d})=>{
 };
 
 function App(){
-  const[d,setD]=useState(INIT);
+  const[d,setD]=useState(()=>loadData());
   const[page,setPage]=useState("home");
   const[pubTab,setPubTab]=useState("papers");
   const[galTab,setGalTab]=useState("photos");
@@ -116,6 +119,8 @@ function App(){
   const[clicks,setClicks]=useState(0);
   const ct=useRef(null);
   const navRef=useRef(null);
+
+  useEffect(()=>{saveData(d)},[d]);
 
   useEffect(()=>{
     let ticking=false;
@@ -260,7 +265,7 @@ function App(){
         <span onClick={logoClick} style={{fontWeight:700,fontSize:"18px",background:"linear-gradient(135deg,#6366f1,#a78bfa)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",cursor:"pointer",userSelect:"none"}}>THM</span>
         <div style={{display:"flex",gap:"4px",alignItems:"center",flexWrap:"wrap"}}>
           {navItems.map(n=><TabBtn key={n.id} active={page===n.id} onClick={()=>setPage(n.id)}>{n.label}</TabBtn>)}
-          {admin&&<React.Fragment><div style={{width:"1px",height:"24px",background:"rgba(99,102,241,.2)",margin:"0 6px"}}/><span style={{fontSize:"11px",color:"#10b981",fontWeight:600,letterSpacing:"1px"}}>{"\u25CF"} ADMIN</span><button onClick={()=>setAdmin(false)} style={{padding:"5px 10px",borderRadius:"6px",border:"1px solid rgba(239,68,68,.3)",background:"transparent",color:"#ef4444",fontSize:"11px",cursor:"pointer",marginLeft:"4px"}}>Logout</button></React.Fragment>}
+          {admin&&<React.Fragment><div style={{width:"1px",height:"24px",background:"rgba(99,102,241,.2)",margin:"0 6px"}}/><span style={{fontSize:"11px",color:"#10b981",fontWeight:600,letterSpacing:"1px"}}>{"\u25CF"} ADMIN</span><button onClick={()=>{const json=JSON.stringify(d,null,2);const blob=new Blob([json],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="site-data.json";a.click();URL.revokeObjectURL(url);navigator.clipboard.writeText("const INIT = "+json+";").then(()=>alert("Data exported!\n\n1. JSON file downloaded\n2. INIT code copied to clipboard\n\nPaste clipboard into your index.html to make changes permanent.")).catch(()=>alert("JSON file downloaded!\n\nOpen site-data.json, wrap contents in:\nconst INIT = ...;\nand paste into index.html"))}} style={{padding:"5px 10px",borderRadius:"6px",border:"1px solid rgba(16,185,129,.3)",background:"transparent",color:"#10b981",fontSize:"11px",cursor:"pointer",marginLeft:"4px"}}>Export</button><button onClick={()=>{if(confirm("Reset all changes to defaults?")){localStorage.removeItem(STORAGE_KEY);setD(INIT)}}} style={{padding:"5px 10px",borderRadius:"6px",border:"1px solid rgba(245,158,11,.3)",background:"transparent",color:"#f59e0b",fontSize:"11px",cursor:"pointer",marginLeft:"4px"}}>Reset</button><button onClick={()=>setAdmin(false)} style={{padding:"5px 10px",borderRadius:"6px",border:"1px solid rgba(239,68,68,.3)",background:"transparent",color:"#ef4444",fontSize:"11px",cursor:"pointer",marginLeft:"4px"}}>Logout</button></React.Fragment>}
         </div>
       </div>
     </nav>
