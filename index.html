@@ -93,7 +93,12 @@ const DEFAULTS={
   reads:[
     {title:"Attention Is All You Need",url:"https://arxiv.org/abs/1706.03762",desc:"The foundational transformer paper that revolutionized NLP."},
     {title:"BERT: Pre-training of Deep Bidirectional Transformers",url:"https://arxiv.org/abs/1810.04805",desc:"Introduced bidirectional pre-training for language understanding."}
-  ]
+  ],
+  cvSections:[
+    {id:"skills",title:"Technical Skills",content:"Programming: Python, R, Java, JavaScript\nFrameworks: PyTorch, TensorFlow, Hugging Face Transformers\nTools: Git, Docker, LaTeX, Linux\nLanguages: English, Urdu"},
+    {id:"awards",title:"Awards & Honors",content:"AI CUP 2023 — Privacy Protection and Medical Data Standardization Challenge participant\nResearch Assistant Fellowship, National Health Research Institutes, Taiwan"}
+  ],
+  cvToggles:{summary:true,education:true,experience:true,publications:true}
 };
 
 const PASS="admin123";
@@ -346,18 +351,63 @@ function App(){
     <SocialBar d={d}/>
   </div>;
 
-  const CVPage=()=><div>
-    <Sec title="Curriculum Vitae"><Card>
-      <p style={{color:"#94a3b8",fontSize:"14px",lineHeight:1.8,marginBottom:"24px"}}>For a detailed PDF, please contact me via email.</p>
-      <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8",marginBottom:"10px"}}>Summary</h3>
-      <p style={{color:"#cbd5e1",fontSize:"14px",lineHeight:1.8,marginBottom:"24px"}}>{d.bio}</p>
-      <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8",marginBottom:"10px"}}>Education</h3>
-      {d.education.map((e,i)=><p key={i} style={{color:"#cbd5e1",fontSize:"14px",marginBottom:"6px"}}>{"\u2022"} {e.degree} — {e.school} {e.year&&("("+e.year+")")}</p>)}
-      <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8",marginBottom:"10px",marginTop:"20px"}}>Publications ({d.publications.length})</h3>
-      {d.publications.map((p,i)=><p key={i} style={{color:"#cbd5e1",fontSize:"13px",marginBottom:"8px",lineHeight:1.6}}>{"["+(i+1)+"] "}{p.authors}. "{p.title}." <i>{p.venue}</i>, {p.year}.</p>)}
-    </Card></Sec>
+  const CVPage=()=>{
+    const toggles=d.cvToggles||{summary:true,education:true,experience:true,publications:true};
+    const sections=d.cvSections||[];
+    const toggleCV=(key)=>updateData({...d,cvToggles:{...toggles,[key]:!toggles[key]}});
+    const moveSec=(idx,dir)=>{const arr=[...sections];const ni=idx+dir;if(ni<0||ni>=arr.length)return;[arr[idx],arr[ni]]=[arr[ni],arr[idx]];updateData({...d,cvSections:arr})};
+    return <div>
+    <Sec title="Curriculum Vitae">
+      <Card>
+        <p style={{color:"#94a3b8",fontSize:"14px",lineHeight:1.8,marginBottom:"24px"}}>For a detailed PDF, please contact me via email.</p>
+
+        {admin&&<div style={{marginBottom:"24px",padding:"16px",borderRadius:"10px",background:"rgba(99,102,241,.06)",border:"1px solid rgba(99,102,241,.1)"}}>
+          <p style={{color:"#818cf8",fontSize:"12px",fontWeight:600,textTransform:"uppercase",letterSpacing:"1px",marginBottom:"10px"}}>Toggle Sections</p>
+          <div style={{display:"flex",gap:"8px",flexWrap:"wrap"}}>
+            {[{k:"summary",l:"Summary"},{k:"education",l:"Education"},{k:"experience",l:"Experience"},{k:"publications",l:"Publications"}].map(s=>
+              <button key={s.k} onClick={()=>toggleCV(s.k)} style={{padding:"5px 14px",borderRadius:"6px",border:"1px solid "+(toggles[s.k]?"rgba(16,185,129,.3)":"rgba(239,68,68,.3)"),background:toggles[s.k]?"rgba(16,185,129,.1)":"rgba(239,68,68,.1)",color:toggles[s.k]?"#10b981":"#ef4444",fontSize:"12px",fontWeight:600,cursor:"pointer"}}>{toggles[s.k]?"\u2713":"\u2717"} {s.l}</button>
+            )}
+          </div>
+        </div>}
+
+        {toggles.summary&&<div style={{marginBottom:"24px"}}>
+          <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8",marginBottom:"10px"}}>Summary</h3>
+          <p style={{color:"#cbd5e1",fontSize:"14px",lineHeight:1.8}}>{d.bio}</p>
+        </div>}
+
+        {toggles.education&&<div style={{marginBottom:"24px"}}>
+          <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8",marginBottom:"10px"}}>Education</h3>
+          {d.education.map((e,i)=><p key={i} style={{color:"#cbd5e1",fontSize:"14px",marginBottom:"6px"}}>{"\u2022"} {e.degree} — {e.school} {e.year&&("("+e.year+")")}</p>)}
+        </div>}
+
+        {toggles.experience&&<div style={{marginBottom:"24px"}}>
+          <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8",marginBottom:"10px"}}>Experience</h3>
+          {d.experience.map((e,i)=><p key={i} style={{color:"#cbd5e1",fontSize:"14px",marginBottom:"6px"}}>{"\u2022"} {e.role} — {e.org} {e.period&&("("+e.period+")")}</p>)}
+        </div>}
+
+        {sections.map((s,i)=><div key={s.id||i} style={{marginBottom:"24px"}}>
+          <div style={{display:"flex",alignItems:"center",gap:"8px",marginBottom:"10px"}}>
+            <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8"}}>{s.title}</h3>
+            {admin&&<div style={{display:"flex",gap:"4px",marginLeft:"auto"}}>
+              {i>0&&<button onClick={()=>moveSec(i,-1)} style={{width:"24px",height:"24px",borderRadius:"4px",border:"1px solid rgba(99,102,241,.2)",background:"transparent",color:"#818cf8",fontSize:"11px",cursor:"pointer"}}>{"\u25B2"}</button>}
+              {i<sections.length-1&&<button onClick={()=>moveSec(i,1)} style={{width:"24px",height:"24px",borderRadius:"4px",border:"1px solid rgba(99,102,241,.2)",background:"transparent",color:"#818cf8",fontSize:"11px",cursor:"pointer"}}>{"\u25BC"}</button>}
+              <Btn small onClick={()=>openEdit({title:"Edit Section",fields:[{key:"title",label:"Section Title"},{key:"content",label:"Content (use \\n for new lines)",multi:true}],initial:s,onSave:f=>{const arr=[...sections];arr[i]={...arr[i],...f};updateData({...d,cvSections:arr})}})}>Edit</Btn>
+              <Btn small danger onClick={()=>{const arr=[...sections];arr.splice(i,1);updateData({...d,cvSections:arr})}}>x</Btn>
+            </div>}
+          </div>
+          {s.content.split("\n").map((line,li)=><p key={li} style={{color:"#cbd5e1",fontSize:"14px",marginBottom:"4px",lineHeight:1.6}}>{line.trim().startsWith("-")||line.trim().startsWith("\u2022")?line:line}</p>)}
+        </div>)}
+
+        {toggles.publications&&<div style={{marginBottom:"24px"}}>
+          <h3 style={{fontSize:"15px",fontWeight:600,color:"#818cf8",marginBottom:"10px"}}>Publications ({d.publications.length})</h3>
+          {d.publications.map((p,i)=><p key={i} style={{color:"#cbd5e1",fontSize:"13px",marginBottom:"8px",lineHeight:1.6}}>{"["+(i+1)+"] "}{p.authors}. "{p.title}." <i>{p.venue}</i>, {p.year}.</p>)}
+        </div>}
+
+        {admin&&<div style={{marginTop:"16px",paddingTop:"16px",borderTop:"1px solid rgba(99,102,241,.1)"}}><Btn small onClick={()=>openEdit({title:"Add CV Section",fields:[{key:"title",label:"Section Title"},{key:"content",label:"Content (use new lines for items)",multi:true}],initial:{},onSave:f=>{const ns={...f,id:"sec_"+Date.now()};updateData({...d,cvSections:[...sections,ns]})}})}>+ Add Section</Btn></div>}
+      </Card>
+    </Sec>
     <SocialBar d={d}/>
-  </div>;
+  </div>};
 
   const navItems=[{id:"home",label:"Home"},{id:"publications",label:"Publications"},{id:"gallery",label:"Gallery"},{id:"blog",label:"Blog"},{id:"cv",label:"CV"}];
 
