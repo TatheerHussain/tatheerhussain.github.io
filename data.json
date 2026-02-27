@@ -3,14 +3,14 @@
   "title": "Ph.D. Researcher",
   "affiliation": "Intelligent System Lab (ISLab), National Kaohsiung University of Science and Technology",
   "location": "Kaohsiung, Taiwan",
-  "email": "tatheer.mir@nkust.edu.tw",
+  "email": "i111154104@nkust.edu.tw",
   "orcid": "0009-0007-8409-8189",
   "github": "TatheerHussain",
   "medium": "tatheerhussainmir",
-  "scholar": "",
-  "linkedin": "",
+  "scholar": "https://scholar.google.com/citations?user=DAJmcRIAAAAJ&hl=en",
+  "linkedin": "https://www.linkedin.com/in/tatheer-hussain-m-09702045/",
   "twitter": "",
-  "profilePhoto": "",
+  "profilePhoto": "https://media.licdn.com/dms/image/v2/C5603AQFC6eS8Og2Bbg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516824764132?e=1773878400&v=beta&t=z_VJQQro9wIsFOO9jAahlQz0fCjlie_DtgNtBmrl228",
   "bio": "I am a Ph.D. researcher at the Intelligent System Lab (ISLab), Department of Electrical Engineering, National Kaohsiung University of Science and Technology (NKUST), Taiwan. My research focuses on Natural Language Processing, Responsible AI, Health Data Privacy & De-identification, Human-Centered Computing, and Data-Driven AI systems. Previously, I was a researcher at Academia Sinica, National Central University (NCU), and National Chengchi University (NCCU), Taiwan.",
   "researchInterests": [
     "Natural Language Processing",
@@ -128,7 +128,7 @@
     {
       "title": "When AI Knows Too Much: Safeguarding Sensitive Health Data",
       "date": "Nov 29, 2025",
-      "summary": "Behind the Paper — npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
+      "summary": "Behind the Paper â npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
       "link": "https://communities.springernature.com/posts/when-ai-knows-too-much-safeguarding-sensitive-health-data-becomes-critical"
     },
     {
