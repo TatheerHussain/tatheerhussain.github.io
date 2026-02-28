@@ -101,11 +101,35 @@
       "venue": "IEEE Access",
       "year": "2025",
       "link": "https://ieeexplore.ieee.org/abstract/document/10938132"
+    },
+    {
+      "type": "journal",
+      "title": "Integrating predictive coding and a user-centric interface for enhanced auditing and quality in cancer registry data",
+      "authors": "Hong-Jie Dai,  Chien-Chang Chen,  Tatheer Hussain Mir, Ting-Yu Wang,  Chen-Kai Wang,  Ya-Chen Chang,  Shu-Jung Yu, Yi-Wen Shen,  Cheng-Jiun Huang,  Chia-Hsuan Tsai,  Ching-Yun Wang,  Hsiao-Jou Chen,  Pei-Shan Weng,  You-Xiang Lin,  Sheng-Wei Chen, Ming-Ju Tsai,  Shian-Fei Juang,  Su-Ying Wu,  Wen-Tsung Tsai , Ming-Yii Huang, Chih-Jen Huang, Chih-Jen Yang,  Ping-Zun Liu,  Chiao-Wen Huang,  Chi-Yen Huang, William Yu Chung Wang, Inn-Wen Chong.  Yi-Hsin Yang ",
+      "venue": "Computational and Structural Biotechnology Journal (CSBJ)",
+      "year": "2024",
+      "link": "https://www.sciencedirect.com/science/article/pii/S2001037024000904"
+    },
+    {
+      "type": "conference",
+      "title": "A Comparative Study of GPT3.5 Fine Tuning and Rule-Based Approaches for De-identification and Normalization of Sensitive Health Information in Electronic Medical Record Notes",
+      "authors": "Zi-Rui Zhao, Po-Chen Chou, Tatheer Hussain Mir, Hong Jie Dai",
+      "venue": "Large Language Models for Automatic Deidentification of Electronic Health Record Notes: International Workshop, IW-DMRN 2024",
+      "year": "2024",
+      "link": "https://link.springer.com/chapter/10.1007/978-981-97-7966-6_3"
+    },
+    {
+      "type": "journal",
+      "title": "Evaluating a Natural Language Processing–Driven, AI-Assisted International Classification of Diseases, 10th Revision, Clinical Modification, Coding System for Diagnosis Related Groups in a Real Hospital Environment: Algorithm Development and Validation Study",
+      "authors": "Hong-Jie Dai, Chen-Kai Wang, Chien-Chang Chen, Chong-Sin Liou, An-Tai Lu, Chia-Hsin Lai, Bo-Tsz Shain, Cheng-Rong Ke, William Yu Chung Wang, Tatheer Hussain Mir, Mutiara Simanjuntak, Hao-Yun Kao, Ming-Ju Tsai, Vincent S Tseng",
+      "venue": "Journal of Medical Internet Research (JMIR)",
+      "year": "2024",
+      "link": "https://www.jmir.org/2024/1/e58278"
     }
   ],
   "projects": [
     {
-      "title": "Health Data De-identification with LLMs",
+      "title": "Speech DeID - Health Data De-identification with LLMs",
       "status": "Active",
       "desc": "Developing large language model-based pipelines for automatic de-identification of sensitive health information in electronic health records.",
       "tech": [
@@ -124,13 +148,23 @@
         "Deep Learning",
         "Medical AI"
       ]
+    },
+    {
+      "status": "Active",
+      "title": "AI-CUP: OpenDeid Corpus",
+      "desc": "A de-identification and temporal analysis corpus developed in collaboration with the University of New South Wales, Australia.  Please refer to this link for the annotation guidelines of this project's corpus . Before using the dataset for this project , a DUA agreement must be signed, and the signed file must be returned to cuper80@gmail.com. To participate in the competitions held by this project, please refer to the competition registration method.",
+      "tech": [
+        "LLM",
+        "NLP",
+        "MLLM"
+      ]
     }
   ],
   "blogs": [
     {
       "title": "When AI Knows Too Much: Safeguarding Sensitive Health Data",
       "date": "Nov 29, 2025",
-      "summary": "Behind the Paper ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
+      "summary": "Behind the Paper ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
       "link": "https://communities.springernature.com/posts/when-ai-knows-too-much-safeguarding-sensitive-health-data-becomes-critical"
     },
     {
@@ -177,13 +211,48 @@
   "cvSections": [
     {
       "id": "skills",
-      "title": "Technical Skills",
-      "content": "Programming: Python, R, Java, JavaScript\nFrameworks: PyTorch, TensorFlow, Hugging Face Transformers\nTools: Git, Docker, LaTeX, Linux\nLanguages: English, Urdu"
+      "title": "Research Skills",
+      "content": "- Machine Learning (classical + deep learning)\n\n- Large Language Models (LLMs): fine-tuning, prompting, evaluation, benchmarking\n\n- Natural Language Processing (NLP): clinical NLP, entity recognition, temporal normalization, text classification\n\n- Clinical Text Mining & Information Extraction\n\n- Electronic Health Record (EHR) analytics and secondary-use modeling\n\n- Privacy-Preserving AI & De-identification Methods\n\n- Experimental Design & Hypothesis Testing\n\n- Model Validation, Error Analysis, and Reproducibility\n\n- Dataset Development & Annotation Protocol Design\n\n- Scientific Benchmarking and Challenge Participation\n\n"
+    },
+    {
+      "content": "Languages: Python, SQL, Bash/Shell scripting\n\nML Frameworks: PyTorch, TensorFlow, Hugging Face Transformers, Scikit-learn\n\nNLP Libraries: spaCy, NLTK, tokenizers, sentence-transformers\n\nData Processing: Pandas, NumPy, SciPy\n\nVisualization: Matplotlib, Seaborn, Plotly\n\nAnnotation Tools: Label Studio, BRAT, Prodigy (or equivalent platforms)\n\nVersion Control: Git, GitHub/GitLab\n\nEnvironments: Linux/Unix systems, Conda, virtual environments\n\nDeployment & Experimentation: Jupyter, Docker (if used), API integration workflows",
+      "title": "Technical & Programming Skills",
+      "id": "sec_1772288352355"
+    },
+    {
+      "content": "Supervised, semi-supervised, and transfer learning\n\nTransformer architectures and attention mechanisms\n\nPrompt engineering & instruction tuning\n\nHyperparameter optimization\n\nCross-validation and ablation studies\n\nStatistical evaluation metrics (F1, precision, recall, ROC-AUC)\n\nFeature engineering and representation learning\n\nError analysis pipelines for NLP systems",
+      "title": "AI/ML Methodologies",
+      "id": "sec_1772288378251"
+    },
+    {
+      "content": "\nHealthcare Informatics & Clinical AI\n\nBiomedical Text Processing\n\nDigital Health Systems\n\nSensitive Health Information (SHI) protection\n\nEthical AI and data privacy in medicine\n\nClinical terminology normalization\n\nMedical language semantics\n\nStructured + unstructured medical data integration",
+      "title": "Domain Expertise",
+      "id": "sec_1772288409785"
+    },
+    {
+      "content": "Large-scale dataset preprocessing\n\nNoisy text handling and normalization\n\nMissing data strategies\n\nData cleaning pipelines\n\nStatistical analysis & inference\n\nData quality assessment\n\nStructured and unstructured data fusion",
+      "title": "Data Science & Analytical Skills",
+      "id": "sec_1772288436211"
+    },
+    {
+      "content": "Peer-reviewed journal publications\n\nConference papers & proceedings\n\nAcademic book chapter authorship\n\nManuscript preparation and revision\n\nReviewer-style critical paper evaluation\n\nGrant/research proposal drafting (if applicable)\n\nLiterature review synthesis\n\nResearch documentation & reproducibility standards",
+      "title": "Scholarly & Academic Competencies",
+      "id": "sec_1772288457885"
+    },
+    {
+      "content": "Technical blogging on AI/NLP concepts\n\nResearch dissemination for interdisciplinary audiences\n\nPresentation of technical material to academic and non-technical stakeholders\n\nScientific visualization & reporting\n\nWorkshop/tutorial material preparation",
+      "title": "Communication & Academic Outreach",
+      "id": "sec_1772288503005"
     },
     {
       "id": "awards",
       "title": "Awards & Honors",
-      "content": "AI CUP 2023 â Privacy Protection and Medical Data Standardization Challenge participant\nResearch Assistant Fellowship, National Health Research Institutes, Taiwan"
+      "content": "- Research Assistant Fellowship, National Health Research Institutes, Taiwan\n- Research Assistant Fellowship, Academia Sinica, Taiwan\n- Ministry of Education Taiwan MSc - Fully Funded Scholarship Award\n- Ministry of Education Taiwan - PhD Fully funded Scholarship Award. \n\n- AI CUP 2023 Privacy Protection and Medical Data Standardisation Challenge participant.\n\n"
+    },
+    {
+      "content": "- Guest Presentation at the Second Workshop on Digital Disease Detection using Social Media 2025 (2025 DDDSM)\n\n(https://www.sredhconsortium.org/sredh-workshops/2025-dddsm)",
+      "title": "Guest Presentations",
+      "id": "sec_1772288915864"
     }
   ],
   "cvToggles": {
