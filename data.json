@@ -257,32 +257,32 @@
       "content": "- Machine Learning (classical + deep learning)\n\n- Large Language Models (LLMs): fine-tuning, prompting, evaluation, benchmarking\n\n- Natural Language Processing (NLP): clinical NLP, entity recognition, temporal normalization, text classification\n\n- Clinical Text Mining & Information Extraction\n\n- Electronic Health Record (EHR) analytics and secondary-use modeling\n\n- Privacy-Preserving AI & De-identification Methods\n\n- Experimental Design & Hypothesis Testing\n\n- Model Validation, Error Analysis, and Reproducibility\n\n- Dataset Development & Annotation Protocol Design\n\n- Scientific Benchmarking and Challenge Participation\n\n"
     },
     {
-      "content": "Languages: Python, SQL, Bash/Shell scripting\n\nML Frameworks: PyTorch, TensorFlow, Hugging Face Transformers, Scikit-learn\n\nNLP Libraries: spaCy, NLTK, tokenizers, sentence-transformers\n\nData Processing: Pandas, NumPy, SciPy\n\nVisualization: Matplotlib, Seaborn, Plotly\n\nAnnotation Tools: Label Studio, BRAT, Prodigy (or equivalent platforms)\n\nVersion Control: Git, GitHub/GitLab\n\nEnvironments: Linux/Unix systems, Conda, virtual environments\n\nDeployment & Experimentation: Jupyter, Docker (if used), API integration workflows",
+      "content": "- Languages: Python, SQL, Bash/Shell scripting\n\n- ML Frameworks: PyTorch, TensorFlow, Hugging Face Transformers, Scikit-learn\n\n- NLP Libraries: spaCy, NLTK, tokenizers, sentence-transformers\n\n- Data Processing and Visualisation\n\n- Annotation Tools: Label Studio, BRAT, \n\n- Version Control: Git, GitHub/GitLab\n\n- Environments: Linux/Unix systems, Conda, virtual environments\n\n- Deployment & Experimentation: Jupyter, Docker, API integration workflows",
       "title": "Technical & Programming Skills",
       "id": "sec_1772288352355"
     },
     {
-      "content": "Supervised, semi-supervised, and transfer learning\n\nTransformer architectures and attention mechanisms\n\nPrompt engineering & instruction tuning\n\nHyperparameter optimization\n\nCross-validation and ablation studies\n\nStatistical evaluation metrics (F1, precision, recall, ROC-AUC)\n\nFeature engineering and representation learning\n\nError analysis pipelines for NLP systems",
+      "content": "- Supervised, semi-supervised, and transfer learning; Transformer architectures & attention; prompt engineering & instruction tuning; hyperparameter optimization; cross-validation & ablation studies; advanced NLP & deep learning techniques and more...",
       "title": "AI/ML Methodologies",
       "id": "sec_1772288378251"
     },
     {
-      "content": "\nHealthcare Informatics & Clinical AI\n\nBiomedical Text Processing\n\nDigital Health Systems\n\nSensitive Health Information (SHI) protection\n\nEthical AI and data privacy in medicine\n\nClinical terminology normalization\n\nMedical language semantics\n\nStructured + unstructured medical data integration",
+      "content": "- Healthcare informatics & clinical AI; biomedical text processing; digital health systems; SHI protection & privacy; ethical AI in medicine; clinical terminology normalization; medical language semantics; structured & unstructured data integration.",
       "title": "Domain Expertise",
       "id": "sec_1772288409785"
     },
     {
-      "content": "Large-scale dataset preprocessing\n\nNoisy text handling and normalization\n\nMissing data strategies\n\nData cleaning pipelines\n\nStatistical analysis & inference\n\nData quality assessment\n\nStructured and unstructured data fusion",
+      "content": "- Large-scale dataset preprocessing; noisy text handling & normalization; missing data strategies & imputation; data cleaning pipelines; statistical analysis & inference; data quality assessment; structured & unstructured data integration.",
       "title": "Data Science & Analytical Skills",
       "id": "sec_1772288436211"
     },
     {
-      "content": "Peer-reviewed journal publications\n\nConference papers & proceedings\n\nAcademic book chapter authorship\n\nManuscript preparation and revision\n\nReviewer-style critical paper evaluation\n\nGrant/research proposal drafting (if applicable)\n\nLiterature review synthesis\n\nResearch documentation & reproducibility standards",
+      "content": "- Peer-reviewed journal publications; conference papers & proceedings; academic book chapters; manuscript preparation & revision; critical paper evaluation; grant/research proposal drafting; literature review synthesis; research documentation & reproducibility.",
       "title": "Scholarly & Academic Competencies",
       "id": "sec_1772288457885"
     },
     {
-      "content": "Technical blogging on AI/NLP concepts\n\nResearch dissemination for interdisciplinary audiences\n\nPresentation of technical material to academic and non-technical stakeholders\n\nScientific visualization & reporting\n\nWorkshop/tutorial material preparation",
+      "content": "- Technical blogging on AI/NLP; research dissemination to interdisciplinary audiences; presentations to academic & non-technical stakeholders; scientific visualization & reporting; workshop & tutorial material preparation.",
       "title": "Communication & Academic Outreach",
       "id": "sec_1772288503005"
     },
@@ -301,6 +301,6 @@
     "summary": true,
     "education": true,
     "experience": true,
-    "publications": true
+    "publications": false
   }
 }
