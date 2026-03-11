@@ -168,15 +168,15 @@
   ],
   "blogs": [
     {
-      "title": "When AI Knows Too Much: Safeguarding Sensitive Health Data",
+      "title": "When AI Knows Too Much: Safeguarding Sensitive Health Data - (Tatheer Hussain Mir, Jitendra Jonagaddalla, Hong Jie Dai)",
       "date": "Nov 29, 2025",
-      "summary": "Behind the Paper ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
+      "summary": "The rise of Large Language Models has increased concerns about privacy and data leaks. Health systems use EHRs for research, but these records hold sensitive details that can reveal patient identities. To safely use EHRs and support digital health research, private data must be safeguarded.\n\n\nPublished in Bioengineering & Biotechnology, Research Data, and Computational Sciences",
       "link": "https://communities.springernature.com/posts/when-ai-knows-too-much-safeguarding-sensitive-health-data-becomes-critical"
     },
     {
       "title": "NLP Lecture Series: From Basic to Advance Level",
       "date": "Oct 7, 2020",
-      "summary": "A comprehensive introduction to NLP covering key concepts, tools, and applications.",
+      "summary": "A comprehensive introduction to NLP covering key concepts, tools, and applications.\n\n",
       "link": "https://tatheerhussainmir.medium.com/nlp-lecture-series-from-basic-to-advance-level-part-1-fe1ee2b87dd4"
     },
     {
