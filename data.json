@@ -59,6 +59,12 @@
       "org": "National Central University (NCU), Taiwan",
       "period": "",
       "details": ""
+    },
+    {
+      "role": "Graduate Research Assistant",
+      "org": "ISLab - NKUT - Taiwan",
+      "period": "Apr-2023 - Present",
+      "details": "Developing privacy-preserving AI systems for clinical NLP using LLMs and multimodal models."
     }
   ],
   "publications": [
@@ -120,7 +126,7 @@
     },
     {
       "type": "journal",
-      "title": "Evaluating a Natural Language ProcessingâDriven, AI-Assisted International Classification of Diseases, 10th Revision, Clinical Modification, Coding System for Diagnosis Related Groups in a Real Hospital Environment: Algorithm Development and Validation Study",
+      "title": "Evaluating a Natural Language ProcessingÃ¢ÂÂDriven, AI-Assisted International Classification of Diseases, 10th Revision, Clinical Modification, Coding System for Diagnosis Related Groups in a Real Hospital Environment: Algorithm Development and Validation Study",
       "authors": "Hong-Jie Dai, Chen-Kai Wang, Chien-Chang Chen, Chong-Sin Liou, An-Tai Lu, Chia-Hsin Lai, Bo-Tsz Shain, Cheng-Rong Ke, William Yu Chung Wang, Tatheer Hussain Mir, Mutiara Simanjuntak, Hao-Yun Kao, Ming-Ju Tsai, Vincent S Tseng",
       "venue": "Journal of Medical Internet Research (JMIR)",
       "year": "2024",
@@ -164,7 +170,7 @@
     {
       "title": "When AI Knows Too Much: Safeguarding Sensitive Health Data",
       "date": "Nov 29, 2025",
-      "summary": "Behind the Paper ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
+      "summary": "Behind the Paper ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ npj Digital Medicine. Discussing the AI CUP 2023 competition for health data privacy.",
       "link": "https://communities.springernature.com/posts/when-ai-knows-too-much-safeguarding-sensitive-health-data-becomes-critical"
     },
     {
@@ -207,7 +213,43 @@
     ],
     "videos": []
   },
-  "reads": [],
+  "reads": [
+    {
+      "desc": "This is the foundational work that laid the groundwork for information theory, introducing concepts such as information entropy, channel capacity, and the bit. Though not specific to NLP, all modern statistical language models—including those used in NLP and generative AI—are grounded in statistical notions of information content first formalised here. It underpins how we model language probabilities and the compression of text.",
+      "title": "A Mathematical Theory of Communication (1948) - (Claude E. Shannon)",
+      "url": "https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf"
+    },
+    {
+      "title": "Neural Probabilistic Language Model – (Bengio et al. (2003))",
+      "url": "https://nlp.stanford.edu/read/cs224n/slides_w26/cs224n-2026-lecture01-history.pdf",
+      "desc": "One of the earliest neural network language models that learned distributed word embeddings, this work laid the foundation for using neural representations in NLP—a core idea that later enabled word2vec, BERT, and modern LLMs."
+    },
+    {
+      "title": "Conditional Random Fields for Sequence Labeling – Lafferty et al. (2001)",
+      "desc": "A key structured prediction model that became standard for named entity recognition (NER) and clinical text de‑identification. CRFs showed how modeling dependencies between labels improves sequence labeling over independent classifiers.",
+      "url": "https://repository.upenn.edu/entities/publication/c9aea099-b5c8-4fdd-901c-15b6f889e4a7"
+    },
+    {
+      "title": "Neural Machine Translation by Jointly Learning to Align and Translate – Bahdanau et al. (2015)",
+      "desc": "Introduced the attention mechanism for seq2seq models, allowing models to focus on relevant parts of input sequences. This breakthrough directly influenced Transformers and improved handling of long-range dependencies in NLP.",
+      "url": "https://arxiv.org/pdf/1409.0473.pdf"
+    },
+    {
+      "title": "Attention Is All You Need – Vaswani et al. (2017)",
+      "desc": "The seminal Transformer paper, replacing RNNs and CNNs with self-attention. It enabled better parallelization and long-range dependency modeling, forming the backbone of all modern LLMs such as GPT, BERT, and T5.",
+      "url": "https://chioni.github.io/assets/data/attentionisallyouneed.pdf"
+    },
+    {
+      "title": "Language Models are Unsupervised Multitask Learners (GPT‑2) – Radford et al. (2019)",
+      "desc": "Demonstrated that large-scale unsupervised language models have strong zero- and few-shot capabilities. GPT‑2 highlighted the importance of model scale and generative pretraining, influencing the next generation of LLMs.",
+      "url": "https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf"
+    },
+    {
+      "title": "Distributed Representations of Words and Phrases and their Compositionality - Tomas Mikolov et. el. 2013",
+      "url": "https://proceedings.neurips.cc/paper/2013/hash/9aa42b31882ec039965f3c4923ce901b-Abstract.html",
+      "desc": "a game-changing idea that represents words as dense vectors in a way that captures their meaning and relationships. Instead of treating words as isolated symbols, this approach learns patterns from large text corpora so that similar words are close together in “embedding space.”"
+    }
+  ],
   "cvSections": [
     {
       "id": "skills",
