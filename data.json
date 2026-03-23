@@ -10,7 +10,7 @@
   "scholar": "https://scholar.google.com/citations?user=DAJmcRIAAAAJ&hl=en",
   "linkedin": "https://www.linkedin.com/in/tatheer-hussain-m-09702045/",
   "twitter": "",
-  "profilePhoto": "https://media.licdn.com/dms/image/v2/C5603AQFC6eS8Og2Bbg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516824764132?e=1773878400&v=beta&t=z_VJQQro9wIsFOO9jAahlQz0fCjlie_DtgNtBmrl228",
+  "profilePhoto": "https://media.licdn.com/dms/image/v2/C5603AQFC6eS8Og2Bbg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516824764132?e=1775692800&v=beta&t=SSM9DvM-UPOKKcR1WMLaFbnJBdbNKraUL8xAL-d-5zI",
   "bio": "I am a Ph.D. researcher at the Intelligent System Lab (ISLab), Department of Electrical Engineering, National Kaohsiung University of Science and Technology (NKUST), Taiwan. My research centers on Natural Language Processing (NLP), Responsible AI, Health Data Privacy & De-identification, and Human-Centered AI systems with a strong emphasis on data-driven and ethically grounded AI methodologies. I have contributed to work on AI-assisted de-identification of sensitive health information in electronic health records and clinical text and related topics in computational linguistics and privacy-preserving analytics.\n\nBefore my current role at NKUST, I gained research experience as a research assistant, collaborating on projects involving clinical NLP and AI systems, bolstering my expertise at institutions including Academia Sinica and the National Health Research Institutes (NHRI), Taiwan.\n\nMy publications span peer-reviewed venues in NLP, health informatics, and applied AI, with a focus on advancing computational techniques that serve real-world and ethically sensitive applications.",
   "researchInterests": [
     "Natural Language Processing",
@@ -126,7 +126,7 @@
     },
     {
       "type": "journal",
-      "title": "Evaluating a Natural Language ProcessingÃ¢ÂÂDriven, AI-Assisted International Classification of Diseases, 10th Revision, Clinical Modification, Coding System for Diagnosis Related Groups in a Real Hospital Environment: Algorithm Development and Validation Study",
+      "title": "Evaluating a Natural Language ProcessingÃÂ¢ÃÂÃÂDriven, AI-Assisted International Classification of Diseases, 10th Revision, Clinical Modification, Coding System for Diagnosis Related Groups in a Real Hospital Environment: Algorithm Development and Validation Study",
       "authors": "Hong-Jie Dai, Chen-Kai Wang,........, Tatheer Hussain Mir, ......., Vincent S Tseng et. el",
       "venue": "Journal of Medical Internet Research (JMIR)",
       "year": "2024",
@@ -219,39 +219,39 @@
   },
   "reads": [
     {
-      "desc": "This is the foundational work that laid the groundwork for information theory, introducing concepts such as information entropy, channel capacity, and the bit. Though not specific to NLP, all modern statistical language models—including those used in NLP and generative AI—are grounded in statistical notions of information content first formalised here. It underpins how we model language probabilities and the compression of text.",
+      "desc": "This is the foundational work that laid the groundwork for information theory, introducing concepts such as information entropy, channel capacity, and the bit. Though not specific to NLP, all modern statistical language modelsâincluding those used in NLP and generative AIâare grounded in statistical notions of information content first formalised here. It underpins how we model language probabilities and the compression of text.",
       "title": "A Mathematical Theory of Communication (1948) - (Claude E. Shannon)",
       "url": "https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf"
     },
     {
-      "title": "Neural Probabilistic Language Model – (Bengio et al. (2003))",
+      "title": "Neural Probabilistic Language Model â (Bengio et al. (2003))",
       "url": "https://nlp.stanford.edu/read/cs224n/slides_w26/cs224n-2026-lecture01-history.pdf",
-      "desc": "One of the earliest neural network language models that learned distributed word embeddings, this work laid the foundation for using neural representations in NLP—a core idea that later enabled word2vec, BERT, and modern LLMs."
+      "desc": "One of the earliest neural network language models that learned distributed word embeddings, this work laid the foundation for using neural representations in NLPâa core idea that later enabled word2vec, BERT, and modern LLMs."
     },
     {
-      "title": "Conditional Random Fields for Sequence Labeling – Lafferty et al. (2001)",
-      "desc": "A key structured prediction model that became standard for named entity recognition (NER) and clinical text de‑identification. CRFs showed how modeling dependencies between labels improves sequence labeling over independent classifiers.",
+      "title": "Conditional Random Fields for Sequence Labeling â Lafferty et al. (2001)",
+      "desc": "A key structured prediction model that became standard for named entity recognition (NER) and clinical text deâidentification. CRFs showed how modeling dependencies between labels improves sequence labeling over independent classifiers.",
       "url": "https://repository.upenn.edu/entities/publication/c9aea099-b5c8-4fdd-901c-15b6f889e4a7"
     },
     {
-      "title": "Neural Machine Translation by Jointly Learning to Align and Translate – Bahdanau et al. (2015)",
+      "title": "Neural Machine Translation by Jointly Learning to Align and Translate â Bahdanau et al. (2015)",
       "desc": "Introduced the attention mechanism for seq2seq models, allowing models to focus on relevant parts of input sequences. This breakthrough directly influenced Transformers and improved handling of long-range dependencies in NLP.",
       "url": "https://arxiv.org/pdf/1409.0473.pdf"
     },
     {
-      "title": "Attention Is All You Need – Vaswani et al. (2017)",
+      "title": "Attention Is All You Need â Vaswani et al. (2017)",
       "desc": "The seminal Transformer paper, replacing RNNs and CNNs with self-attention. It enabled better parallelization and long-range dependency modeling, forming the backbone of all modern LLMs such as GPT, BERT, and T5.",
       "url": "https://chioni.github.io/assets/data/attentionisallyouneed.pdf"
     },
     {
-      "title": "Language Models are Unsupervised Multitask Learners (GPT‑2) – Radford et al. (2019)",
-      "desc": "Demonstrated that large-scale unsupervised language models have strong zero- and few-shot capabilities. GPT‑2 highlighted the importance of model scale and generative pretraining, influencing the next generation of LLMs.",
+      "title": "Language Models are Unsupervised Multitask Learners (GPTâ2) â Radford et al. (2019)",
+      "desc": "Demonstrated that large-scale unsupervised language models have strong zero- and few-shot capabilities. GPTâ2 highlighted the importance of model scale and generative pretraining, influencing the next generation of LLMs.",
       "url": "https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf"
     },
     {
       "title": "Distributed Representations of Words and Phrases and their Compositionality - Tomas Mikolov et. el. 2013",
       "url": "https://proceedings.neurips.cc/paper/2013/hash/9aa42b31882ec039965f3c4923ce901b-Abstract.html",
-      "desc": "a game-changing idea that represents words as dense vectors in a way that captures their meaning and relationships. Instead of treating words as isolated symbols, this approach learns patterns from large text corpora so that similar words are close together in “embedding space.”"
+      "desc": "a game-changing idea that represents words as dense vectors in a way that captures their meaning and relationships. Instead of treating words as isolated symbols, this approach learns patterns from large text corpora so that similar words are close together in âembedding space.â"
     }
   ],
   "cvSections": [
