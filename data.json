@@ -131,10 +131,11 @@
       "status": "Active",
       "desc": "Developing large language model-based pipelines for automatic de-identification of sensitive health information in electronic health records.",
       "tech": [
+        "Audio De-identification",
+        "Temporal Alignment",
         "LLM",
         "NLP",
-        "CRF",
-        "BERT"
+        "MoE"
       ]
     },
     {
@@ -142,6 +143,7 @@
       "status": "",
       "desc": "Building NLP-driven systems for automatic ICD-10-CM code assignment in real hospital environments to improve diagnosis related group accuracy.",
       "tech": [
+        "ICD-10",
         "NLP",
         "Deep Learning",
         "Medical AI"
@@ -150,11 +152,12 @@
     {
       "status": "",
       "title": "AI-CUP: OpenDeid Corpus",
-      "desc": "A de-identification and temporal analysis corpus developed in collaboration with the University of New South Wales, Australia.  Please refer to this link for the annotation guidelines of this project's corpus . Before using the dataset for this project , a DUA agreement must be signed, and the signed file must be returned to cuper80@gmail.com. To participate in the competitions held by this project, please refer to the competition registration method.",
+      "desc": "A de-identification and temporal analysis corpus developed in collaboration with the University of New South Wales, Australia.  Please refer to this link for the annotation guidelines of this project's corpus . Before using the dataset for this project , a DUA agreement must be signed, and the signed file must be returned to cuper80@gmail.com. To participate in the competitions held by this project, please refer to the competition registration method.\n\n\nMore detials on lab profile: (https://nkustislab.github.io/active_project/clinical%20natural%20language%20processing/opendeid/)",
       "tech": [
-        "LLM",
-        "NLP",
-        "MLLM"
+        "Corpus",
+        "Clinical NLP",
+        "Deidentification",
+        "Temporal Reasoning"
       ]
     },
     {
