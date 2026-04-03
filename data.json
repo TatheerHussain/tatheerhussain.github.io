@@ -93,14 +93,6 @@
       "type": "conference"
     },
     {
-      "title": "Evaluating an NLP-Driven AI-Assisted ICD-10-CM Coding System for DRGs in a Real Hospital Environment",
-      "authors": "Hong-Jie Dai, ... Tatheer Hussain Mir, ... Vincent S Tseng",
-      "venue": "Journal of Medical Internet Research",
-      "year": "2024",
-      "link": "https://www.jmir.org/2024/1/e58278",
-      "type": "journal"
-    },
-    {
       "type": "journal",
       "title": "EFFResNet-ViT: A Fusion-Based Convolutional and Vision Transformer Model for Explainable Medical Image Classification",
       "authors": "Hussain, Tahir and Shouno, Hayaru and et. el",
@@ -126,7 +118,7 @@
     },
     {
       "type": "journal",
-      "title": "Evaluating a Natural Language ProcessingÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂDriven, AI-Assisted International Classification of Diseases, 10th Revision, Clinical Modification, Coding System for Diagnosis Related Groups in a Real Hospital Environment: Algorithm Development and Validation Study",
+      "title": "Evaluating a Natural Language Processing–Driven, AI-Assisted International Classification of Diseases, 10th Revision, Clinical Modification, Coding System for Diagnosis Related Groups in a Real Hospital Environment: Algorithm Development and Validation Study",
       "authors": "Hong-Jie Dai, Chen-Kai Wang,........, Tatheer Hussain Mir, ......., Vincent S Tseng et. el",
       "venue": "Journal of Medical Internet Research (JMIR)",
       "year": "2024",
