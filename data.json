@@ -24,7 +24,7 @@
   ],
   "education": [
     {
-      "degree": "Ph.D. in Electrical Engineering",
+      "degree": "Ph.D. ",
       "school": "National Kaohsiung University of Science and Technology (NKUST)",
       "year": "Graduating - June 2026",
       "details": "Intelligent System Lab (ISLab)"
@@ -126,7 +126,7 @@
     },
     {
       "type": "journal",
-      "title": "Evaluating a Natural Language ProcessingÃÂÃÂ¢ÃÂÃÂÃÂÃÂDriven, AI-Assisted International Classification of Diseases, 10th Revision, Clinical Modification, Coding System for Diagnosis Related Groups in a Real Hospital Environment: Algorithm Development and Validation Study",
+      "title": "Evaluating a Natural Language ProcessingÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂDriven, AI-Assisted International Classification of Diseases, 10th Revision, Clinical Modification, Coding System for Diagnosis Related Groups in a Real Hospital Environment: Algorithm Development and Validation Study",
       "authors": "Hong-Jie Dai, Chen-Kai Wang,........, Tatheer Hussain Mir, ......., Vincent S Tseng et. el",
       "venue": "Journal of Medical Internet Research (JMIR)",
       "year": "2024",
@@ -230,14 +230,9 @@
       "content": "- Machine Learning (classical + deep learning)\n\n- Large Language Models (LLMs): fine-tuning, prompting, evaluation, benchmarking\n\n- Natural Language Processing (NLP): clinical NLP, entity recognition, temporal normalization, text classification\n\n- Clinical Text Mining & Information Extraction\n\n- Electronic Health Record (EHR) analytics and secondary-use modeling\n\n- Privacy-Preserving AI & De-identification Methods\n\n- Experimental Design & Hypothesis Testing\n\n- Model Validation, Error Analysis, and Reproducibility\n\n- Dataset Development & Annotation Protocol Design\n\n- Scientific Benchmarking and Challenge Participation\n\n"
     },
     {
-      "content": "- Languages: Python, SQL, Bash/Shell scripting\n\n- ML Frameworks: PyTorch, TensorFlow, Hugging Face Transformers, Scikit-learn\n\n- NLP Libraries: spaCy, NLTK, tokenizers, sentence-transformers\n\n- Data Processing and Visualisation\n\n- Annotation Tools: Label Studio, BRAT, \n\n- Version Control: Git, GitHub/GitLab\n\n- Environments: Linux/Unix systems, Conda, virtual environments\n\n- Deployment & Experimentation: Jupyter, Docker, API integration workflows",
+      "content": "- Languages: Python, SQL, Bash/Shell scripting (Earlier experience with full stack development)\n\n- ML Frameworks, NLP Libraries, Data Processing and Visualisation\n\n- Annotation Tools: Label Studio, \n\n- Version Control: Git\n",
       "title": "Technical & Programming Skills",
       "id": "sec_1772288352355"
-    },
-    {
-      "content": "- Supervised, semi-supervised, and transfer learning; Transformer architectures & attention; prompt engineering & instruction tuning; hyperparameter optimization; cross-validation & ablation studies; advanced NLP & deep learning techniques and more...",
-      "title": "AI/ML Methodologies",
-      "id": "sec_1772288378251"
     },
     {
       "content": "- Healthcare informatics & clinical AI; biomedical text processing; digital health systems; SHI protection & privacy; ethical AI in medicine; clinical terminology normalization; medical language semantics; structured & unstructured data integration.",
@@ -245,24 +240,9 @@
       "id": "sec_1772288409785"
     },
     {
-      "content": "- Large-scale dataset preprocessing; noisy text handling & normalization; missing data strategies & imputation; data cleaning pipelines; statistical analysis & inference; data quality assessment; structured & unstructured data integration.",
-      "title": "Data Science & Analytical Skills",
-      "id": "sec_1772288436211"
-    },
-    {
-      "content": "- Peer-reviewed journal publications; conference papers & proceedings; academic book chapters; manuscript preparation & revision; critical paper evaluation; grant/research proposal drafting; literature review synthesis; research documentation & reproducibility.",
-      "title": "Scholarly & Academic Competencies",
-      "id": "sec_1772288457885"
-    },
-    {
-      "content": "- Technical blogging on AI/NLP; research dissemination to interdisciplinary audiences; presentations to academic & non-technical stakeholders; scientific visualization & reporting; workshop & tutorial material preparation.",
-      "title": "Communication & Academic Outreach",
-      "id": "sec_1772288503005"
-    },
-    {
       "id": "awards",
       "title": "Awards & Honors",
-      "content": "- Research Assistant Fellowship, National Health Research Institutes, Taiwan\n- Research Assistant Fellowship, Academia Sinica, Taiwan\n- Ministry of Education Taiwan MSc - Fully Funded Scholarship Award\n- Ministry of Education Taiwan - PhD Fully funded Scholarship Award. \n\n- AI CUP 2023 Privacy Protection and Medical Data Standardisation Challenge participant.\n\n"
+      "content": "- Ministry of Education Taiwan MSc - Fully Funded Scholarship Award\n- Ministry of Education Taiwan - PhD Fully funded Scholarship Award. \n\n"
     },
     {
       "content": "I had the privilege of serving as a guest presenter at the Second Workshop on Digital Disease Detection using Social Media 2025 (https://www.sredhconsortium.org/sredh-workshops/2025-dddsm), which is part of Medinfo (https://medinfo2025.org/). Find my presentation slides at the link above. ",
