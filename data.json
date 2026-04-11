@@ -10,7 +10,7 @@
   "scholar": "https://scholar.google.com/citations?user=DAJmcRIAAAAJ&hl=en",
   "linkedin": "https://www.linkedin.com/in/tatheer-hussain-m-09702045/",
   "twitter": "",
-  "profilePhoto": "https://media.licdn.com/dms/image/v2/C5603AQFC6eS8Og2Bbg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516824764132?e=1775692800&v=beta&t=SSM9DvM-UPOKKcR1WMLaFbnJBdbNKraUL8xAL-d-5zI",
+  "profilePhoto": "https://avatars.githubusercontent.com/u/24871656?v=4",
   "bio": "I am a PhD candidate (Graduating by June 30) at the Intelligent System Lab (ISLab) under the supervision of Prof. Hong-Jie Dai at the National Kaohsiung University of Science and Technology (NKUST), Taiwan. My research focuses on multimodal and explainable AI for healthcare, particularly in modeling heterogeneous biomedical data such as electronic health records (EHRs), clinical text, and speech data. I develop large language model (LLM) and multimodal frameworks for de-identification, temporal reasoning, and clinically grounded decision support, with an emphasis on privacy-preserving and responsible AI.\n\nPreviously, I worked as a research assistant on clinical NLP and applied AI projects in collaboration with Academia Sinica and National Health Research Institutes (NHRI), gaining experience in extracting structured insights from high-dimensional biomedical data. I have also collaborated with academic and research institutions in Taiwan and internationally.\n\nMy publications span peer-reviewed venues in NLP, health informatics, and applied AI, with a focus on multimodal learning, interpretability, and real-world clinical deployment, aiming to develop robust and ethically grounded AI systems.",
   "researchInterests": [
     "Natural Language Processing",
@@ -118,7 +118,7 @@
     },
     {
       "type": "journal",
-      "title": "Evaluating a Natural Language ProcessingâDriven, AI-Assisted International Classification of Diseases, 10th Revision, Clinical Modification, Coding System for Diagnosis Related Groups in a Real Hospital Environment: Algorithm Development and Validation Study",
+      "title": "Evaluating a Natural Language ProcessingÃ¢ÂÂDriven, AI-Assisted International Classification of Diseases, 10th Revision, Clinical Modification, Coding System for Diagnosis Related Groups in a Real Hospital Environment: Algorithm Development and Validation Study",
       "authors": "Hong-Jie Dai, Chen-Kai Wang,........, Tatheer Hussain Mir, ......., Vincent S Tseng et. el",
       "venue": "Journal of Medical Internet Research (JMIR)",
       "year": "2024",
