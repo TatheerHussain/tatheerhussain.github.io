@@ -225,19 +225,19 @@
       "content": "- Machine Learning (classical + deep learning)\n\n- Large Language Models (LLMs): fine-tuning, prompting, evaluation, benchmarking\n\n- Natural Language Processing (NLP): clinical NLP, entity recognition, temporal normalization, text classification\n\n- Clinical Text Mining & Information Extraction\n\n- Electronic Health Record (EHR) analytics and secondary-use modeling\n\n- Privacy-Preserving AI & De-identification Methods\n\n- Experimental Design & Hypothesis Testing\n\n- Model Validation, Error Analysis, and Reproducibility\n\n- Dataset Development & Annotation Protocol Design\n\n- Scientific Benchmarking and Challenge Participation\n\n"
     },
     {
-      "content": "- Languages: Python, SQL, Bash/Shell scripting (Earlier experience with full stack development)\n\n- ML Frameworks, NLP Libraries, Data Processing and Visualisation\n\n- Annotation Tools: Label Studio, \n\n- Version Control: Git\n",
-      "title": "Technical & Programming Skills",
-      "id": "sec_1772288352355"
-    },
-    {
       "content": "- Healthcare informatics & clinical AI; biomedical text processing; digital health systems; SHI protection & privacy; ethical AI in medicine; clinical terminology normalization; medical language semantics; structured & unstructured data integration.",
       "title": "Domain Expertise",
       "id": "sec_1772288409785"
     },
     {
+      "content": "- Languages: Python, SQL, Bash/Shell scripting (Earlier experience with full stack development)\n\n- ML Frameworks, NLP Libraries, Data Processing and Visualisation\n\n- Annotation Tools: Label Studio, \n\n- Version Control: Git\n",
+      "title": "Technical & Programming Skills",
+      "id": "sec_1772288352355"
+    },
+    {
       "id": "awards",
       "title": "Awards & Honors",
-      "content": "- Ministry of Education Taiwan MSc - Fully Funded Scholarship Award\n- Ministry of Education Taiwan - PhD Fully funded Scholarship Award. \n\n"
+      "content": "- Ministry of Education Taiwan MSc - Fully Funded Scholarship Award\n- Ministry of Education Taiwan - PhD Fully funded Scholarship Award. \n- AICTE Merit Based Fully Funded Scholarship\n\n"
     },
     {
       "content": "I had the privilege of serving as a guest presenter at the Second Workshop on Digital Disease Detection using Social Media 2025 (https://www.sredhconsortium.org/sredh-workshops/2025-dddsm), which is part of Medinfo (https://medinfo2025.org/). Find my presentation slides at the link above. ",
