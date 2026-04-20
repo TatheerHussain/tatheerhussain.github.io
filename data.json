@@ -123,6 +123,14 @@
       "venue": "Journal of Medical Internet Research (JMIR)",
       "year": "2024",
       "link": "https://www.jmir.org/2024/1/e58278"
+    },
+    {
+      "type": "preprint",
+      "title": "Leveraging State-of-the-Art LLMs for the De-identification of Sensitive Health Information in Clinical Speech",
+      "authors": "Hong-Jie Dai,  Tatheer Hussain Mir,  Liang-Chun Fang,  Ching-Tai Chen,  Hui-Hsien Feng,  Jiunn-Ru Lai,  Hsieh-Chih Hsu,  Pratham Nandy,  Omkar Panchal,  Wei-Hsiang Liao,  You-Zhen Tien,  Pin-Zhen Chen,  Yun-Ru Lin,  Jitendra Jonnagaddala",
+      "venue": "medRxiv",
+      "year": "April 2026",
+      "link": "https://www.medrxiv.org/content/10.64898/2026.04.13.26349911v1"
     }
   ],
   "projects": [
