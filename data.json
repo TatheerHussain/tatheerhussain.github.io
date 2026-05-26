@@ -11,7 +11,7 @@
   "linkedin": "https://www.linkedin.com/in/tatheer-hussain-m-09702045/",
   "twitter": "",
   "profilePhoto": "https://avatars.githubusercontent.com/u/24871656?v=4",
-  "bio": "I am a PhD candidate (Graduating by June 30) at the Intelligent System Lab (ISLab) under the supervision of Prof. Hong-Jie Dai at the National Kaohsiung University of Science and Technology (NKUST), Taiwan. My research focuses on multimodal and explainable AI for healthcare, particularly in modeling heterogeneous biomedical data such as electronic health records (EHRs), clinical text, and speech data. I develop large language model (LLM) and multimodal frameworks for de-identification, temporal reasoning, and clinically grounded decision support, with an emphasis on privacy-preserving and responsible AI.\n\nPreviously, I worked as a research assistant on clinical NLP and applied AI projects in collaboration with Academia Sinica and National Health Research Institutes (NHRI), gaining experience in extracting structured insights from high-dimensional biomedical data. I have also collaborated with academic and research institutions in Taiwan and internationally.\n\nMy publications span peer-reviewed venues in NLP, health informatics, and applied AI, with a focus on multimodal learning, interpretability, and real-world clinical deployment, aiming to develop robust and ethically grounded AI systems.",
+  "bio": "An early-career researcher at the Intelligent System Lab (ISLab), under the supervison of  Hong-Jie Dai. I find myself working at the intersection of intelligence and uncertainty—where machines attempt to read not only data, but the human condition encoded within it.\n\nMy inquiry revolves around multimodal and explainable artificial intelligence for healthcare, not merely as a technical pursuit, but as a philosophical one: how can fragmented signals—clinical text, electronic health records, speech—be woven into meaningful narratives that reflect lived realities? In modeling such heterogeneous biomedical data, I engage with questions of interpretation, temporality, and truth—seeking systems that do not just predict, but justify; that do not merely process, but reveal.\n\nI design large language and multimodal frameworks for de-identification, temporal reasoning, and clinically grounded decision-making, always mindful that behind every datapoint lies a person whose privacy, dignity, and story must remain intact without revealing their identity. Thus, my work is not only about capability, but about responsibility—about shaping intelligence that is accountable to the very lives it seeks to assist.",
   "researchInterests": [
     "Natural Language Processing",
     "Responsible AI",
@@ -131,6 +131,12 @@
       "venue": "medRxiv",
       "year": "April 2026",
       "link": "https://www.medrxiv.org/content/10.64898/2026.04.13.26349911v1"
+    },
+    {
+      "type": "Preprint",
+      "title": "test",
+      "authors": "tets",
+      "venue": "tets"
     }
   ],
   "projects": [
@@ -206,6 +212,10 @@
     {
       "date": "2026",
       "text": "I had the privilege of serving as a guest presenter at the Second Workshop on Digital Disease Detection using Social Media 2025 (https://www.sredhconsortium.org/sredh-workshops/2025-dddsm), under Medinfo (https://medinfo2025.org/). Slides at this link under Agenda Section (https://www.sredhconsortium.org/sredh-workshops/2025-dddsm)"
+    },
+    {
+      "date": "April 14 2026",
+      "text": "New preprint avaibale online: https://www.medrxiv.org/content/10.64898/2026.04.13.26349911v1"
     }
   ],
   "gallery": {
