@@ -216,6 +216,10 @@
     {
       "date": "April 14 2026",
       "text": "New preprint avaibale online: https://www.medrxiv.org/content/10.64898/2026.04.13.26349911v1"
+    },
+    {
+      "date": "Nov - 2026",
+      "text": "New Research Publication in BMJ Health & Care Informatics  Our research paper, “Development of a Clinical Speech Corpus with Temporally Aligned Sensitive Health Information Annotations,” has been published in BMJ Health & Care Informatics (2026).  The study introduces a clinical speech corpus with temporally aligned Sensitive Health Information (SHI) annotations, contributing to research in clinical NLP, healthcare data privacy, and responsible AI.  This work advances efforts towards developing privacy-preserving AI technologies for healthcare.  Read the full publication: https://informatics.bmj.com/content/33/1/e102158"
     }
   ],
   "gallery": {
