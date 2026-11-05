@@ -1,6 +1,6 @@
 {
   "name": "Tatheer Hussain Mir",
-  "title": "Ph.D. (Doctoral Researcher)",
+  "title": "Ph.D.",
   "affiliation": "Intelligent System Lab (ISLab), National Kaohsiung University of Science and Technology",
   "location": "Kaohsiung, Taiwan",
   "email": "mirtatheerhussain@gmail.com",
@@ -252,7 +252,7 @@
     {
       "id": "skills",
       "title": "Research Skills",
-      "content": "- Machine Learning (classical + deep learning)\n\n- Large Language Models (LLMs): fine-tuning, prompting, evaluation, benchmarking\n\n- Natural Language Processing (NLP): clinical NLP, entity recognition, temporal normalization, text classification\n\n- Clinical Text Mining & Information Extraction\n\n- Electronic Health Record (EHR) analytics and secondary-use modeling\n\n- Privacy-Preserving AI & De-identification Methods\n\n- Experimental Design & Hypothesis Testing\n\n- Model Validation, Error Analysis, and Reproducibility\n\n- Dataset Development & Annotation Protocol Design\n\n- Scientific Benchmarking and Challenge Participation\n\n"
+      "content": "- Large Language Models (LLMs): fine-tuning, prompting, evaluation, benchmarking\n\n- Natural Language Processing (NLP): clinical NLP, entity recognition, temporal normalization, text classification\n\n- Clinical Text Mining & Information Extraction\n\n- Electronic Health Record (EHR) analytics and secondary-use modeling\n\n- Privacy-Preserving AI & De-identification Methods\n\n- Experimental Design & Hypothesis Testing\n\n- Model Validation, Error Analysis, and Reproducibility\n\n- Dataset Development & Annotation Protocol Design\n\n- Scientific Benchmarking\n\n"
     },
     {
       "content": "- Healthcare informatics & clinical AI; biomedical text processing; digital health systems; SHI protection & privacy; ethical AI in medicine; clinical terminology normalization; medical language semantics; structured & unstructured data integration.",
