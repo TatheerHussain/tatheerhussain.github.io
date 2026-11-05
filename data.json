@@ -137,6 +137,14 @@
       "title": "test",
       "authors": "tets",
       "venue": "tets"
+    },
+    {
+      "type": "journal",
+      "title": "Development of a clinical speech corpus with temporally aligned sensitive health information annotations",
+      "authors": "Hsieh-Chih Hsu, Liang-Chun Fang, Tatheer Hussain Mir, Ching-Tai Chen, Hui-Hsien Feng, Jiunn-Ru Lai, Pratham Nandy, Omkar Panchal, Wei-Hsiang Liao, You-Zhen Tien, Pin-Zhen Chen, Yun-Ru Lin, Hong-Jie Dai, Jitendra Jonnagaddala",
+      "venue": "BMJ",
+      "year": "2026",
+      "link": "https://informatics.bmj.com/content/33/1/e102158"
     }
   ],
   "projects": [
